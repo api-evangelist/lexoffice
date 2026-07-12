@@ -1,0 +1,57 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: lexoffice
+providerId: lexoffice
+created: '2026-07-12'
+modified: '2026-07-12'
+reconciled: false
+tags:
+- Accounting
+- Invoicing
+- Germany
+- Rate Limiting
+- Quotas
+description: >-
+  lexoffice (lexware Office) rate limits the public API to a fixed 2 requests per
+  second per client. Requests beyond that rate are rejected with HTTP 429 (Too
+  Many Requests). The authorization/authentication server is documented to have
+  its own independent rate limits and also returns 429 when exceeded. There is no
+  published per-day or per-month request quota for the REST API itself; usage is
+  bounded by the per-second cap and by the underlying subscription plan.
+notes: >-
+  The 2 requests/second limit is documented explicitly in the Lexware API
+  reference. Clients should serialize requests, throttle to <= 2 rps, and
+  implement exponential backoff with jitter on 429. Numeric per-account daily
+  ceilings are not published as of the review date.
+sources:
+- https://developers.lexware.io/docs/
+- https://developers.lexoffice.io/
+responseCodes:
+  throttled: 429
+limits:
+- name: API Requests
+  scope: client
+  metric: requests
+  limit: 2 per second
+  notes: Fixed limit across the REST API; HTTP 429 when exceeded.
+- name: Authorization Server Requests
+  scope: client
+  metric: requests
+  limit: independent (not numerically published)
+  notes: The auth server has its own separate rate limit and also returns 429.
+- name: Daily / Monthly Quota
+  scope: account
+  metric: requests
+  limit: not published
+  notes: No fixed per-day or per-month request quota is documented for the REST API.
+policies:
+- name: Throttling
+  description: Keep sustained request rate at or below 2 requests per second per client to avoid HTTP 429 responses.
+- name: Backoff Strategy
+  description: On a 429 response, back off and retry with exponential backoff plus jitter rather than retrying immediately.
+- name: Serialization
+  description: Because the limit is per-second and low, batch/bulk jobs should serialize calls rather than fan out concurrently.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

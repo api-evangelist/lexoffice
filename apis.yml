@@ -1,0 +1,260 @@
+aid: lexoffice
+url: https://raw.githubusercontent.com/api-evangelist/lexoffice/refs/heads/main/apis.yml
+name: lexoffice
+kind: company
+description: lexoffice (rebranded to "lexware Office" in 2025) is a German cloud
+  accounting, invoicing, and bookkeeping SaaS from Lexware (Haufe Group). Its public
+  REST API lets developers push and pull business data - contacts, invoices,
+  quotations, order confirmations, delivery notes, credit notes, dunnings,
+  bookkeeping vouchers, files, payments, and profile metadata - and subscribe to
+  webhooks via event subscriptions. Authentication is a self-serve Bearer API key.
+  The API gateway moved from api.lexoffice.io to api.lexware.io on 26 May 2025 as
+  part of the rebrand; the legacy host remained available through December 2025.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Accounting
+- Invoicing
+- Bookkeeping
+- Finance
+- Germany
+- Vouchers
+- Contacts
+- SaaS
+- Financial Software
+created: '2026-07-12'
+modified: '2026-07-12'
+specificationVersion: '0.19'
+apis:
+- aid: lexoffice:lexoffice-contacts-api
+  name: lexoffice Contacts API
+  tags:
+  - Contacts
+  - Customers
+  - Vendors
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developers.lexware.io/docs/#contacts-endpoint
+  baseURL: https://api.lexware.io/v1
+  properties:
+  - url: https://developers.lexware.io/docs/
+    type: Documentation
+  - url: https://developers.lexware.io/docs/#contacts-endpoint
+    type: APIReference
+  - url: openapi/lexoffice-openapi.yml
+    type: OpenAPI
+  - url: collections/lexoffice.postman_collection.json
+    type: PostmanCollection
+  - url: collections/lexoffice.opencollection.json
+    type: OpenCollection
+  description: Create, retrieve, list, and update contacts - customers and vendors
+    with company or person roles, addresses, contact persons, email/phone, and
+    bank details. Contacts are referenced by invoices, vouchers, and other documents.
+- aid: lexoffice:lexoffice-invoices-api
+  name: lexoffice Invoices API
+  tags:
+  - Invoices
+  - Billing
+  - Documents
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developers.lexware.io/docs/#invoices-endpoint
+  baseURL: https://api.lexware.io/v1
+  properties:
+  - url: https://developers.lexware.io/docs/#invoices-endpoint
+    type: APIReference
+  - url: openapi/lexoffice-openapi.yml
+    type: OpenAPI
+  - url: collections/lexoffice.postman_collection.json
+    type: PostmanCollection
+  - url: collections/lexoffice.opencollection.json
+    type: OpenCollection
+  description: Create and retrieve invoices with line items, tax conditions,
+    shipping, and payment conditions. Invoices are drafts by default; pass
+    finalize=true to create them in the open status. Render the rendered PDF via
+    the document and file sub-resources.
+- aid: lexoffice:lexoffice-quotations-api
+  name: lexoffice Quotations API
+  tags:
+  - Quotations
+  - Offers
+  - Sales
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developers.lexware.io/docs/#quotations-endpoint
+  baseURL: https://api.lexware.io/v1
+  properties:
+  - url: https://developers.lexware.io/docs/#quotations-endpoint
+    type: APIReference
+  - url: openapi/lexoffice-openapi.yml
+    type: OpenAPI
+  - url: collections/lexoffice.postman_collection.json
+    type: PostmanCollection
+  - url: collections/lexoffice.opencollection.json
+    type: OpenCollection
+  description: Create and retrieve quotations (offers) with line items, expiration
+    dates, and tax conditions, then fetch the rendered PDF document for a sales offer.
+- aid: lexoffice:lexoffice-order-confirmations-api
+  name: lexoffice Order Confirmations API
+  tags:
+  - Order Confirmations
+  - Sales
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developers.lexware.io/docs/#order-confirmations-endpoint
+  baseURL: https://api.lexware.io/v1
+  properties:
+  - url: https://developers.lexware.io/docs/#order-confirmations-endpoint
+    type: APIReference
+  - url: openapi/lexoffice-openapi.yml
+    type: OpenAPI
+  - url: collections/lexoffice.opencollection.json
+    type: OpenCollection
+  description: Create and retrieve order confirmations that acknowledge a customer
+    order, with line items and tax conditions, plus the rendered PDF document.
+- aid: lexoffice:lexoffice-delivery-notes-api
+  name: lexoffice Delivery Notes API
+  tags:
+  - Delivery Notes
+  - Fulfillment
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developers.lexware.io/docs/#delivery-notes-endpoint
+  baseURL: https://api.lexware.io/v1
+  properties:
+  - url: https://developers.lexware.io/docs/#delivery-notes-endpoint
+    type: APIReference
+  - url: openapi/lexoffice-openapi.yml
+    type: OpenAPI
+  - url: collections/lexoffice.opencollection.json
+    type: OpenCollection
+  description: Create and retrieve delivery notes documenting shipped goods, with
+    line items (without prices) and delivery details, plus the rendered PDF document.
+- aid: lexoffice:lexoffice-credit-notes-api
+  name: lexoffice Credit Notes API
+  tags:
+  - Credit Notes
+  - Refunds
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developers.lexware.io/docs/#credit-notes-endpoint
+  baseURL: https://api.lexware.io/v1
+  properties:
+  - url: https://developers.lexware.io/docs/#credit-notes-endpoint
+    type: APIReference
+  - url: openapi/lexoffice-openapi.yml
+    type: OpenAPI
+  - url: collections/lexoffice.opencollection.json
+    type: OpenCollection
+  description: Create and retrieve credit notes (Rechnungskorrektur) that credit a
+    customer, with line items and tax conditions, plus the rendered PDF document.
+- aid: lexoffice:lexoffice-dunnings-api
+  name: lexoffice Dunnings API
+  tags:
+  - Dunnings
+  - Reminders
+  - Collections
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developers.lexware.io/docs/#dunnings-endpoint
+  baseURL: https://api.lexware.io/v1
+  properties:
+  - url: https://developers.lexware.io/docs/#dunnings-endpoint
+    type: APIReference
+  - url: openapi/lexoffice-openapi.yml
+    type: OpenAPI
+  - url: collections/lexoffice.opencollection.json
+    type: OpenCollection
+  description: Create and retrieve dunnings (payment reminders) that reference a
+    preceding open invoice, with line items and dunning level, plus the rendered
+    PDF document.
+- aid: lexoffice:lexoffice-vouchers-api
+  name: lexoffice Vouchers API
+  tags:
+  - Vouchers
+  - Bookkeeping
+  - Files
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developers.lexware.io/docs/#vouchers-endpoint
+  baseURL: https://api.lexware.io/v1
+  properties:
+  - url: https://developers.lexware.io/docs/#vouchers-endpoint
+    type: APIReference
+  - url: openapi/lexoffice-openapi.yml
+    type: OpenAPI
+  - url: collections/lexoffice.postman_collection.json
+    type: PostmanCollection
+  - url: collections/lexoffice.opencollection.json
+    type: OpenCollection
+  description: Manage bookkeeping vouchers (sales/purchase invoices and credit
+    notes) - create, retrieve, update, delete, and search via the voucherlist -
+    with voucher items, tax type, and posting categories. Upload and attach
+    receipt files via the files endpoint.
+- aid: lexoffice:lexoffice-event-subscriptions-api
+  name: lexoffice Event Subscriptions API
+  tags:
+  - Webhooks
+  - Event Subscriptions
+  - Notifications
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developers.lexware.io/docs/#event-subscriptions-endpoint
+  baseURL: https://api.lexware.io/v1
+  properties:
+  - url: https://developers.lexware.io/docs/#event-subscriptions-endpoint
+    type: APIReference
+  - url: openapi/lexoffice-openapi.yml
+    type: OpenAPI
+  - url: collections/lexoffice.opencollection.json
+    type: OpenCollection
+  description: Subscribe to change events (e.g. contact.created, invoice.created)
+    by registering an HTTPS callback URL. lexoffice POSTs a webhook payload to your
+    callback when a subscribed event fires. Create, list, retrieve, and delete
+    subscriptions. Server-to-endpoint HTTP callbacks, not a WebSocket.
+- aid: lexoffice:lexoffice-payments-api
+  name: lexoffice Payments API
+  tags:
+  - Payments
+  - Payment Conditions
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developers.lexware.io/docs/#payments-endpoint
+  baseURL: https://api.lexware.io/v1
+  properties:
+  - url: https://developers.lexware.io/docs/#payments-endpoint
+    type: APIReference
+  - url: openapi/lexoffice-openapi.yml
+    type: OpenAPI
+  - url: collections/lexoffice.opencollection.json
+    type: OpenCollection
+  description: Retrieve the payment status and payment items recorded for a voucher,
+    and list the payment conditions (terms and discounts) configured in the account.
+- aid: lexoffice:lexoffice-profile-metadata-api
+  name: lexoffice Profile and Metadata API
+  tags:
+  - Profile
+  - Metadata
+  - Recurring Templates
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developers.lexware.io/docs/#profile-endpoint
+  baseURL: https://api.lexware.io/v1
+  properties:
+  - url: https://developers.lexware.io/docs/#profile-endpoint
+    type: APIReference
+  - url: openapi/lexoffice-openapi.yml
+    type: OpenAPI
+  - url: collections/lexoffice.opencollection.json
+    type: OpenCollection
+  description: Read account profile and connection metadata, the list of supported
+    countries, posting categories used to classify vouchers, and recurring
+    templates that generate recurring invoices.
+common:
+- type: DomainSecurity
+  url: security/lexoffice-domain-security.yml
+- type: Authentication
+  url: authentication/lexoffice-authentication.yml
+- type: LinkedIn
+  url: https://www.linkedin.com/company/lexware
+- type: Website
+  url: https://www.lexware.de/lexware-office/
+- type: Documentation
+  url: https://developers.lexware.io/docs/
+- type: Plans
+  url: plans/lexoffice-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/lexoffice-rate-limits.yml
+- type: FinOps
+  url: finops/lexoffice-finops.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

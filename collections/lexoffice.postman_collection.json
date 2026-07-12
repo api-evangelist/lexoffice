@@ -1,0 +1,254 @@
+{
+  "info": {
+    "name": "lexoffice (lexware Office) Public API",
+    "description": "Representative Postman collection for the lexoffice / lexware Office public REST API, grounded in https://developers.lexware.io/docs/. Base URL: https://api.lexware.io/v1 (legacy https://api.lexoffice.io/v1 retired end of 2025). Authenticate with a Bearer API key generated at https://app.lexware.de/addons/public-api. Rate limited to 2 requests/second.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      { "key": "token", "value": "{{apiKey}}", "type": "string" }
+    ]
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "https://api.lexware.io/v1", "type": "string" },
+    { "key": "apiKey", "value": "", "type": "string" }
+  ],
+  "item": [
+    {
+      "name": "Contacts",
+      "item": [
+        {
+          "name": "Filter contacts",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/contacts?email=&page=0&size=25", "host": ["{{baseUrl}}"], "path": ["contacts"], "query": [{ "key": "email", "value": "" }, { "key": "page", "value": "0" }, { "key": "size", "value": "25" }] },
+            "description": "Returns a paged, filterable list of contacts."
+          }
+        },
+        {
+          "name": "Create a contact",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Accept", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"version\": 0,\n  \"roles\": { \"customer\": {} },\n  \"company\": { \"name\": \"Musterfirma GmbH\" }\n}" },
+            "url": { "raw": "{{baseUrl}}/contacts", "host": ["{{baseUrl}}"], "path": ["contacts"] },
+            "description": "Creates a new contact (customer and/or vendor)."
+          }
+        },
+        {
+          "name": "Retrieve a contact",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/contacts/:id", "host": ["{{baseUrl}}"], "path": ["contacts", ":id"], "variable": [{ "key": "id", "value": "" }] },
+            "description": "Retrieves a single contact by its UUID."
+          }
+        },
+        {
+          "name": "Update a contact",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Accept", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"version\": 1,\n  \"roles\": { \"customer\": {} },\n  \"company\": { \"name\": \"Musterfirma GmbH\" }\n}" },
+            "url": { "raw": "{{baseUrl}}/contacts/:id", "host": ["{{baseUrl}}"], "path": ["contacts", ":id"], "variable": [{ "key": "id", "value": "" }] },
+            "description": "Updates an existing contact (version required for optimistic locking)."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Invoices",
+      "item": [
+        {
+          "name": "Create an invoice",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Accept", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"voucherDate\": \"2026-07-12T00:00:00.000+02:00\",\n  \"address\": { \"name\": \"Musterfirma GmbH\", \"countryCode\": \"DE\" },\n  \"lineItems\": [\n    { \"type\": \"custom\", \"name\": \"Beratung\", \"quantity\": 1, \"unitName\": \"Stunde\", \"unitPrice\": { \"currency\": \"EUR\", \"netAmount\": 100.0, \"taxRatePercentage\": 19 } }\n  ],\n  \"taxConditions\": { \"taxType\": \"net\" },\n  \"totalPrice\": { \"currency\": \"EUR\" }\n}" },
+            "url": { "raw": "{{baseUrl}}/invoices?finalize=false", "host": ["{{baseUrl}}"], "path": ["invoices"], "query": [{ "key": "finalize", "value": "false" }] },
+            "description": "Creates an invoice. Pass finalize=true to create it in the open status instead of as a draft."
+          }
+        },
+        {
+          "name": "Retrieve an invoice",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/invoices/:id", "host": ["{{baseUrl}}"], "path": ["invoices", ":id"], "variable": [{ "key": "id", "value": "" }] },
+            "description": "Retrieves a single invoice by its UUID."
+          }
+        },
+        {
+          "name": "Request the invoice PDF",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/invoices/:id/document", "host": ["{{baseUrl}}"], "path": ["invoices", ":id", "document"], "variable": [{ "key": "id", "value": "" }] },
+            "description": "Returns a documentFileId used to download the rendered PDF via the Files endpoint."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Vouchers",
+      "item": [
+        {
+          "name": "Create a voucher",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Accept", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"type\": \"salesinvoice\",\n  \"voucherNumber\": \"RE-2026-001\",\n  \"voucherDate\": \"2026-07-12\",\n  \"totalGrossAmount\": 119.0,\n  \"totalTaxAmount\": 19.0,\n  \"taxType\": \"gross\",\n  \"useCollectiveContact\": true,\n  \"voucherItems\": [\n    { \"amount\": 119.0, \"taxAmount\": 19.0, \"taxRatePercent\": 19.0, \"categoryId\": \"8f8464a8-5023-41f8-a481-e8e8f38a10c8\" }\n  ]\n}" },
+            "url": { "raw": "{{baseUrl}}/vouchers", "host": ["{{baseUrl}}"], "path": ["vouchers"] },
+            "description": "Creates a bookkeeping voucher for preliminary accounting."
+          }
+        },
+        {
+          "name": "Retrieve a voucher",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/vouchers/:id", "host": ["{{baseUrl}}"], "path": ["vouchers", ":id"], "variable": [{ "key": "id", "value": "" }] },
+            "description": "Retrieves a voucher by its UUID."
+          }
+        },
+        {
+          "name": "Update a voucher",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Accept", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{}" },
+            "url": { "raw": "{{baseUrl}}/vouchers/:id", "host": ["{{baseUrl}}"], "path": ["vouchers", ":id"], "variable": [{ "key": "id", "value": "" }] },
+            "description": "Updates an existing voucher."
+          }
+        },
+        {
+          "name": "Delete a voucher",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/vouchers/:id", "host": ["{{baseUrl}}"], "path": ["vouchers", ":id"], "variable": [{ "key": "id", "value": "" }] },
+            "description": "Deletes a voucher."
+          }
+        },
+        {
+          "name": "Search the voucher list",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/voucherlist?voucherType=invoice&voucherStatus=open&page=0&size=25", "host": ["{{baseUrl}}"], "path": ["voucherlist"], "query": [{ "key": "voucherType", "value": "invoice" }, { "key": "voucherStatus", "value": "open" }, { "key": "page", "value": "0" }, { "key": "size", "value": "25" }] },
+            "description": "Filterable list of voucher-type documents. voucherType and voucherStatus are required."
+          }
+        },
+        {
+          "name": "Upload a file",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": { "mode": "formdata", "formdata": [{ "key": "file", "type": "file", "src": [] }, { "key": "type", "value": "voucher", "type": "text" }] },
+            "url": { "raw": "{{baseUrl}}/files", "host": ["{{baseUrl}}"], "path": ["files"] },
+            "description": "Uploads a receipt file (PDF/JPG/PNG) as multipart/form-data to attach to a voucher."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Event Subscriptions",
+      "item": [
+        {
+          "name": "List event subscriptions",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/event-subscriptions", "host": ["{{baseUrl}}"], "path": ["event-subscriptions"] },
+            "description": "Lists all event subscriptions (webhooks)."
+          }
+        },
+        {
+          "name": "Create an event subscription",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Accept", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"eventType\": \"invoice.created\",\n  \"callbackUrl\": \"https://example.com/webhooks/lexoffice\"\n}" },
+            "url": { "raw": "{{baseUrl}}/event-subscriptions", "host": ["{{baseUrl}}"], "path": ["event-subscriptions"] },
+            "description": "Registers an HTTPS callback URL for an event type."
+          }
+        },
+        {
+          "name": "Retrieve an event subscription",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/event-subscriptions/:id", "host": ["{{baseUrl}}"], "path": ["event-subscriptions", ":id"], "variable": [{ "key": "id", "value": "" }] },
+            "description": "Retrieves an event subscription by its UUID."
+          }
+        },
+        {
+          "name": "Delete an event subscription",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/event-subscriptions/:id", "host": ["{{baseUrl}}"], "path": ["event-subscriptions", ":id"], "variable": [{ "key": "id", "value": "" }] },
+            "description": "Deletes an event subscription."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Payments",
+      "item": [
+        {
+          "name": "Retrieve payment status for a voucher",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/payments/:voucherId", "host": ["{{baseUrl}}"], "path": ["payments", ":voucherId"], "variable": [{ "key": "voucherId", "value": "" }] },
+            "description": "Returns the open amount, payment status, and payment items for a voucher."
+          }
+        },
+        {
+          "name": "List payment conditions",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/payment-conditions", "host": ["{{baseUrl}}"], "path": ["payment-conditions"] },
+            "description": "Returns the payment conditions configured in the account."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Profile & Metadata",
+      "item": [
+        {
+          "name": "Retrieve the account profile",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/profile", "host": ["{{baseUrl}}"], "path": ["profile"] },
+            "description": "Returns the connected organization's profile and connection metadata."
+          }
+        },
+        {
+          "name": "List countries",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/countries", "host": ["{{baseUrl}}"], "path": ["countries"] },
+            "description": "Returns the list of supported countries with tax classification."
+          }
+        },
+        {
+          "name": "List posting categories",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/posting-categories", "host": ["{{baseUrl}}"], "path": ["posting-categories"] },
+            "description": "Returns the posting categories used to classify voucher items."
+          }
+        }
+      ]
+    }
+  ]
+}

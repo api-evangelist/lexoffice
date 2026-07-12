@@ -1,0 +1,21 @@
+generated: '2026-07-12'
+method: derived
+source: openapi/lexoffice-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  description: >-
+    Bearer API key. The account owner generates a private API key from the Public
+    API add-on at https://app.lexware.de/addons/public-api (self-serve; requires a
+    paid lexoffice / lexware Office plan) and passes it as `Authorization: Bearer
+    YOUR_API_KEY` on every request. The key is a long-lived token scoped to the
+    connected organization. There is no OAuth client registration or partner
+    application for the standard REST API.
+  sources:
+  - openapi/lexoffice-openapi.yml
+  - https://developers.lexware.io/docs/
+  - https://app.lexware.de/addons/public-api

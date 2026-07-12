@@ -1,0 +1,140 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: lexoffice
+providerId: lexoffice
+created: '2026-07-12'
+modified: '2026-07-12'
+reconciled: false
+tags:
+- Accounting
+- Invoicing
+- Germany
+- SaaS
+- Plans
+description: >-
+  lexoffice (lexware Office) is sold as a per-user, per-month SaaS subscription in
+  EUR (net of German VAT), billed monthly with no minimum contract term. Tiers
+  are commonly labelled S, M, L, and XL, ascending from preliminary bookkeeping
+  (receipt capture, document archiving, tax-advisor access) up to full
+  double-entry accounting, VAT pre-notification, and advanced invoice types
+  (xRechnung, EU/English invoices, subscription billing). The public REST API is
+  included at no extra per-call charge for subscribers on a paid plan - the API is
+  a feature of the subscription, not a separately metered product. New customers
+  are frequently offered a promotional discount (around 50%) for the first months.
+  Exact prices change over time and are net of VAT; treat the figures below as
+  representative and verify current rates on the pricing page (reconciled=false).
+notes: >-
+  Prices are the commonly published regular monthly net (excl. 19% German VAT)
+  amounts and are approximate. lexware Office frequently runs new-customer
+  promotions (~50% off for the first three months). The XL tier price in
+  particular varies by promotion; verify all tiers at
+  https://www.lexware.de/preise/ during reconciliation. The API is not sold or
+  metered separately - it is available to paying subscribers.
+sources:
+- https://www.lexware.de/preise/
+- https://www.lexware.de/lexware-office/
+- https://developers.lexware.io/docs/
+plans:
+- id: lexoffice-s
+  name: S
+  type: paid
+  description: >-
+    Entry tier for preliminary accounting - GoBD-compliant document archiving,
+    receipt scanning/capture, open-items overview, bank connection, and
+    tax-advisor (DATEV) access. Suited to small businesses that do their pre-bookkeeping.
+  entries:
+  - label: Subscription
+    name: subscription_s
+    type: flat
+    metric: user
+    limit: -1
+    timeFrame: month
+    geo: DE
+    unit: 1
+    currency: EUR
+    price: approx. 6.90 EUR/user/month net (regular; new-customer discount often ~50%)
+    userMultiplied: true
+  elements:
+  - name: Receipt Capture and Archiving
+  - name: Open Items Overview
+  - name: Bank Connection
+  - name: Tax Advisor (DATEV) Access
+  - name: Public REST API
+- id: lexoffice-m
+  name: M
+  type: paid
+  description: >-
+    Adds invoicing - create and send invoices, quotations/offers, delivery notes,
+    payment reminders, and automatic dunning management - on top of the S feature set.
+  entries:
+  - label: Subscription
+    name: subscription_m
+    type: flat
+    metric: user
+    limit: -1
+    timeFrame: month
+    geo: DE
+    unit: 1
+    currency: EUR
+    price: approx. 11.90 EUR/user/month net (regular; new-customer discount often ~50%)
+    userMultiplied: true
+  elements:
+  - name: Invoicing and Quotations
+  - name: Delivery Notes
+  - name: Payment Reminders and Dunning
+  - name: Everything in S
+  - name: Public REST API
+- id: lexoffice-l
+  name: L
+  type: paid
+  description: >-
+    Full accounting solution - VAT pre-notification (Umsatzsteuervoranmeldung),
+    electronic cash register, double-entry accounting, and asset management - on
+    top of the M feature set.
+  entries:
+  - label: Subscription
+    name: subscription_l
+    type: flat
+    metric: user
+    limit: -1
+    timeFrame: month
+    geo: DE
+    unit: 1
+    currency: EUR
+    price: approx. 19.90 EUR/user/month net (regular; new-customer discount often ~50%)
+    userMultiplied: true
+  elements:
+  - name: VAT Pre-Notification
+  - name: Double-Entry Accounting
+  - name: Asset Management
+  - name: Everything in M
+  - name: Public REST API
+- id: lexoffice-xl
+  name: XL
+  type: paid
+  description: >-
+    Top tier - adds subscription/recurring billing and extended invoice types
+    (down-payment invoices, English invoices, EU invoices, xRechnung) plus extended
+    reporting on top of the L feature set. Exact price varies by promotion.
+  entries:
+  - label: Subscription
+    name: subscription_xl
+    type: flat
+    metric: user
+    limit: -1
+    timeFrame: month
+    geo: DE
+    unit: 1
+    currency: EUR
+    price: see pricing page (varies by promotion; net of VAT)
+    userMultiplied: true
+  elements:
+  - name: Recurring / Subscription Billing
+  - name: Extended Invoice Types (xRechnung, EU, English)
+  - name: Extended Reporting
+  - name: Everything in L
+  - name: Public REST API
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
