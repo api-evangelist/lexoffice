@@ -239,6 +239,8 @@ apis:
     countries, posting categories used to classify vouchers, and recurring
     templates that generate recurring invoices.
 common:
+- type: AgenticAccess
+  url: agentic-access/lexoffice-agentic-access.yml
 - type: DomainSecurity
   url: security/lexoffice-domain-security.yml
 - type: Authentication
