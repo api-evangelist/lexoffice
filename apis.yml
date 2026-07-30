@@ -10,7 +10,20 @@ description: lexoffice (rebranded to "lexware Office" in 2025) is a German cloud
   webhooks via event subscriptions. Authentication is a self-serve Bearer API key.
   The API gateway moved from api.lexoffice.io to api.lexware.io on 26 May 2025 as
   part of the rebrand; the legacy host remained available through December 2025.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: paid
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Paid · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/lexoffice.png
 tags:
 - Accounting
 - Invoicing
@@ -27,217 +40,536 @@ specificationVersion: '0.19'
 apis:
 - aid: lexoffice:lexoffice-contacts-api
   name: lexoffice Contacts API
-  tags:
-  - Contacts
-  - Customers
-  - Vendors
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  description: Customers and vendors.
   humanURL: https://developers.lexware.io/docs/#contacts-endpoint
   baseURL: https://api.lexware.io/v1
-  properties:
-  - url: https://developers.lexware.io/docs/
-    type: Documentation
-  - url: https://developers.lexware.io/docs/#contacts-endpoint
-    type: APIReference
-  - url: openapi/lexoffice-openapi.yml
-    type: OpenAPI
-  - url: collections/lexoffice.postman_collection.json
-    type: PostmanCollection
-  - url: collections/lexoffice.opencollection.json
-    type: OpenCollection
-  description: Create, retrieve, list, and update contacts - customers and vendors
-    with company or person roles, addresses, contact persons, email/phone, and
-    bank details. Contacts are referenced by invoices, vouchers, and other documents.
-- aid: lexoffice:lexoffice-invoices-api
-  name: lexoffice Invoices API
   tags:
-  - Invoices
-  - Billing
-  - Documents
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://developers.lexware.io/docs/#invoices-endpoint
-  baseURL: https://api.lexware.io/v1
+  - Contacts
   properties:
-  - url: https://developers.lexware.io/docs/#invoices-endpoint
-    type: APIReference
-  - url: openapi/lexoffice-openapi.yml
-    type: OpenAPI
-  - url: collections/lexoffice.postman_collection.json
-    type: PostmanCollection
-  - url: collections/lexoffice.opencollection.json
-    type: OpenCollection
-  description: Create and retrieve invoices with line items, tax conditions,
-    shipping, and payment conditions. Invoices are drafts by default; pass
-    finalize=true to create them in the open status. Render the rendered PDF via
-    the document and file sub-resources.
-- aid: lexoffice:lexoffice-quotations-api
-  name: lexoffice Quotations API
-  tags:
-  - Quotations
-  - Offers
-  - Sales
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://developers.lexware.io/docs/#quotations-endpoint
-  baseURL: https://api.lexware.io/v1
-  properties:
-  - url: https://developers.lexware.io/docs/#quotations-endpoint
-    type: APIReference
-  - url: openapi/lexoffice-openapi.yml
-    type: OpenAPI
-  - url: collections/lexoffice.postman_collection.json
-    type: PostmanCollection
-  - url: collections/lexoffice.opencollection.json
-    type: OpenCollection
-  description: Create and retrieve quotations (offers) with line items, expiration
-    dates, and tax conditions, then fetch the rendered PDF document for a sales offer.
-- aid: lexoffice:lexoffice-order-confirmations-api
-  name: lexoffice Order Confirmations API
-  tags:
-  - Order Confirmations
-  - Sales
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://developers.lexware.io/docs/#order-confirmations-endpoint
-  baseURL: https://api.lexware.io/v1
-  properties:
-  - url: https://developers.lexware.io/docs/#order-confirmations-endpoint
-    type: APIReference
-  - url: openapi/lexoffice-openapi.yml
-    type: OpenAPI
-  - url: collections/lexoffice.opencollection.json
-    type: OpenCollection
-  description: Create and retrieve order confirmations that acknowledge a customer
-    order, with line items and tax conditions, plus the rendered PDF document.
-- aid: lexoffice:lexoffice-delivery-notes-api
-  name: lexoffice Delivery Notes API
-  tags:
-  - Delivery Notes
-  - Fulfillment
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://developers.lexware.io/docs/#delivery-notes-endpoint
-  baseURL: https://api.lexware.io/v1
-  properties:
-  - url: https://developers.lexware.io/docs/#delivery-notes-endpoint
-    type: APIReference
-  - url: openapi/lexoffice-openapi.yml
-    type: OpenAPI
-  - url: collections/lexoffice.opencollection.json
-    type: OpenCollection
-  description: Create and retrieve delivery notes documenting shipped goods, with
-    line items (without prices) and delivery details, plus the rendered PDF document.
+  - type: OpenAPI
+    url: openapi/lexoffice-contacts-api-openapi.yml
+  - type: Documentation
+    url: https://developers.lexware.io/docs/
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#contacts-endpoint
+  - type: PostmanCollection
+    url: collections/lexoffice.postman_collection.json
+  - type: OpenCollection
+    url: collections/lexoffice.opencollection.json
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#invoices-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#quotations-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#order-confirmations-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#delivery-notes-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#credit-notes-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#dunnings-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#vouchers-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#event-subscriptions-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#payments-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#profile-endpoint
 - aid: lexoffice:lexoffice-credit-notes-api
   name: lexoffice Credit Notes API
+  description: Credit note documents.
+  humanURL: https://developers.lexware.io/docs/#contacts-endpoint
+  baseURL: https://api.lexware.io/v1
   tags:
   - Credit Notes
-  - Refunds
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://developers.lexware.io/docs/#credit-notes-endpoint
-  baseURL: https://api.lexware.io/v1
   properties:
-  - url: https://developers.lexware.io/docs/#credit-notes-endpoint
-    type: APIReference
-  - url: openapi/lexoffice-openapi.yml
-    type: OpenAPI
-  - url: collections/lexoffice.opencollection.json
-    type: OpenCollection
-  description: Create and retrieve credit notes (Rechnungskorrektur) that credit a
-    customer, with line items and tax conditions, plus the rendered PDF document.
+  - type: OpenAPI
+    url: openapi/lexoffice-credit-notes-api-openapi.yml
+  - type: Documentation
+    url: https://developers.lexware.io/docs/
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#contacts-endpoint
+  - type: PostmanCollection
+    url: collections/lexoffice.postman_collection.json
+  - type: OpenCollection
+    url: collections/lexoffice.opencollection.json
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#invoices-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#quotations-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#order-confirmations-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#delivery-notes-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#credit-notes-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#dunnings-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#vouchers-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#event-subscriptions-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#payments-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#profile-endpoint
+- aid: lexoffice:lexoffice-delivery-notes-api
+  name: lexoffice Delivery Notes API
+  description: Delivery note documents.
+  humanURL: https://developers.lexware.io/docs/#contacts-endpoint
+  baseURL: https://api.lexware.io/v1
+  tags:
+  - Delivery Notes
+  properties:
+  - type: OpenAPI
+    url: openapi/lexoffice-delivery-notes-api-openapi.yml
+  - type: Documentation
+    url: https://developers.lexware.io/docs/
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#contacts-endpoint
+  - type: PostmanCollection
+    url: collections/lexoffice.postman_collection.json
+  - type: OpenCollection
+    url: collections/lexoffice.opencollection.json
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#invoices-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#quotations-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#order-confirmations-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#delivery-notes-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#credit-notes-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#dunnings-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#vouchers-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#event-subscriptions-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#payments-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#profile-endpoint
+- aid: lexoffice:lexoffice-down-payment-invoices-api
+  name: lexoffice Down Payment Invoices API
+  description: Down payment invoice documents.
+  humanURL: https://developers.lexware.io/docs/#contacts-endpoint
+  baseURL: https://api.lexware.io/v1
+  tags:
+  - Down Payment Invoices
+  properties:
+  - type: OpenAPI
+    url: openapi/lexoffice-down-payment-invoices-api-openapi.yml
+  - type: Documentation
+    url: https://developers.lexware.io/docs/
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#contacts-endpoint
+  - type: PostmanCollection
+    url: collections/lexoffice.postman_collection.json
+  - type: OpenCollection
+    url: collections/lexoffice.opencollection.json
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#invoices-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#quotations-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#order-confirmations-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#delivery-notes-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#credit-notes-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#dunnings-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#vouchers-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#event-subscriptions-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#payments-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#profile-endpoint
 - aid: lexoffice:lexoffice-dunnings-api
   name: lexoffice Dunnings API
+  description: Payment reminder documents.
+  humanURL: https://developers.lexware.io/docs/#contacts-endpoint
+  baseURL: https://api.lexware.io/v1
   tags:
   - Dunnings
-  - Reminders
-  - Collections
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://developers.lexware.io/docs/#dunnings-endpoint
-  baseURL: https://api.lexware.io/v1
   properties:
-  - url: https://developers.lexware.io/docs/#dunnings-endpoint
-    type: APIReference
-  - url: openapi/lexoffice-openapi.yml
-    type: OpenAPI
-  - url: collections/lexoffice.opencollection.json
-    type: OpenCollection
-  description: Create and retrieve dunnings (payment reminders) that reference a
-    preceding open invoice, with line items and dunning level, plus the rendered
-    PDF document.
-- aid: lexoffice:lexoffice-vouchers-api
-  name: lexoffice Vouchers API
-  tags:
-  - Vouchers
-  - Bookkeeping
-  - Files
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://developers.lexware.io/docs/#vouchers-endpoint
-  baseURL: https://api.lexware.io/v1
-  properties:
-  - url: https://developers.lexware.io/docs/#vouchers-endpoint
-    type: APIReference
-  - url: openapi/lexoffice-openapi.yml
-    type: OpenAPI
-  - url: collections/lexoffice.postman_collection.json
-    type: PostmanCollection
-  - url: collections/lexoffice.opencollection.json
-    type: OpenCollection
-  description: Manage bookkeeping vouchers (sales/purchase invoices and credit
-    notes) - create, retrieve, update, delete, and search via the voucherlist -
-    with voucher items, tax type, and posting categories. Upload and attach
-    receipt files via the files endpoint.
+  - type: OpenAPI
+    url: openapi/lexoffice-dunnings-api-openapi.yml
+  - type: Documentation
+    url: https://developers.lexware.io/docs/
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#contacts-endpoint
+  - type: PostmanCollection
+    url: collections/lexoffice.postman_collection.json
+  - type: OpenCollection
+    url: collections/lexoffice.opencollection.json
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#invoices-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#quotations-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#order-confirmations-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#delivery-notes-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#credit-notes-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#dunnings-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#vouchers-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#event-subscriptions-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#payments-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#profile-endpoint
 - aid: lexoffice:lexoffice-event-subscriptions-api
   name: lexoffice Event Subscriptions API
-  tags:
-  - Webhooks
-  - Event Subscriptions
-  - Notifications
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://developers.lexware.io/docs/#event-subscriptions-endpoint
+  description: Webhook subscriptions for change events.
+  humanURL: https://developers.lexware.io/docs/#contacts-endpoint
   baseURL: https://api.lexware.io/v1
+  tags:
+  - Event Subscriptions
   properties:
-  - url: https://developers.lexware.io/docs/#event-subscriptions-endpoint
-    type: APIReference
-  - url: openapi/lexoffice-openapi.yml
-    type: OpenAPI
-  - url: collections/lexoffice.opencollection.json
-    type: OpenCollection
-  description: Subscribe to change events (e.g. contact.created, invoice.created)
-    by registering an HTTPS callback URL. lexoffice POSTs a webhook payload to your
-    callback when a subscribed event fires. Create, list, retrieve, and delete
-    subscriptions. Server-to-endpoint HTTP callbacks, not a WebSocket.
+  - type: OpenAPI
+    url: openapi/lexoffice-event-subscriptions-api-openapi.yml
+  - type: Documentation
+    url: https://developers.lexware.io/docs/
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#contacts-endpoint
+  - type: PostmanCollection
+    url: collections/lexoffice.postman_collection.json
+  - type: OpenCollection
+    url: collections/lexoffice.opencollection.json
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#invoices-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#quotations-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#order-confirmations-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#delivery-notes-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#credit-notes-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#dunnings-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#vouchers-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#event-subscriptions-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#payments-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#profile-endpoint
+- aid: lexoffice:lexoffice-files-api
+  name: lexoffice Files API
+  description: File upload and download for voucher receipts.
+  humanURL: https://developers.lexware.io/docs/#contacts-endpoint
+  baseURL: https://api.lexware.io/v1
+  tags:
+  - Files
+  properties:
+  - type: OpenAPI
+    url: openapi/lexoffice-files-api-openapi.yml
+  - type: Documentation
+    url: https://developers.lexware.io/docs/
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#contacts-endpoint
+  - type: PostmanCollection
+    url: collections/lexoffice.postman_collection.json
+  - type: OpenCollection
+    url: collections/lexoffice.opencollection.json
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#invoices-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#quotations-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#order-confirmations-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#delivery-notes-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#credit-notes-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#dunnings-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#vouchers-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#event-subscriptions-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#payments-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#profile-endpoint
+- aid: lexoffice:lexoffice-invoices-api
+  name: lexoffice Invoices API
+  description: Outgoing invoices.
+  humanURL: https://developers.lexware.io/docs/#contacts-endpoint
+  baseURL: https://api.lexware.io/v1
+  tags:
+  - Invoices
+  properties:
+  - type: OpenAPI
+    url: openapi/lexoffice-invoices-api-openapi.yml
+  - type: Documentation
+    url: https://developers.lexware.io/docs/
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#contacts-endpoint
+  - type: PostmanCollection
+    url: collections/lexoffice.postman_collection.json
+  - type: OpenCollection
+    url: collections/lexoffice.opencollection.json
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#invoices-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#quotations-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#order-confirmations-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#delivery-notes-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#credit-notes-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#dunnings-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#vouchers-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#event-subscriptions-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#payments-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#profile-endpoint
+- aid: lexoffice:lexoffice-order-confirmations-api
+  name: lexoffice Order Confirmations API
+  description: Order confirmation documents.
+  humanURL: https://developers.lexware.io/docs/#contacts-endpoint
+  baseURL: https://api.lexware.io/v1
+  tags:
+  - Order Confirmations
+  properties:
+  - type: OpenAPI
+    url: openapi/lexoffice-order-confirmations-api-openapi.yml
+  - type: Documentation
+    url: https://developers.lexware.io/docs/
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#contacts-endpoint
+  - type: PostmanCollection
+    url: collections/lexoffice.postman_collection.json
+  - type: OpenCollection
+    url: collections/lexoffice.opencollection.json
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#invoices-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#quotations-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#order-confirmations-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#delivery-notes-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#credit-notes-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#dunnings-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#vouchers-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#event-subscriptions-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#payments-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#profile-endpoint
 - aid: lexoffice:lexoffice-payments-api
   name: lexoffice Payments API
+  description: Payment status for a voucher and payment conditions.
+  humanURL: https://developers.lexware.io/docs/#contacts-endpoint
+  baseURL: https://api.lexware.io/v1
   tags:
   - Payments
-  - Payment Conditions
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://developers.lexware.io/docs/#payments-endpoint
-  baseURL: https://api.lexware.io/v1
   properties:
-  - url: https://developers.lexware.io/docs/#payments-endpoint
-    type: APIReference
-  - url: openapi/lexoffice-openapi.yml
-    type: OpenAPI
-  - url: collections/lexoffice.opencollection.json
-    type: OpenCollection
-  description: Retrieve the payment status and payment items recorded for a voucher,
-    and list the payment conditions (terms and discounts) configured in the account.
-- aid: lexoffice:lexoffice-profile-metadata-api
-  name: lexoffice Profile and Metadata API
+  - type: OpenAPI
+    url: openapi/lexoffice-payments-api-openapi.yml
+  - type: Documentation
+    url: https://developers.lexware.io/docs/
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#contacts-endpoint
+  - type: PostmanCollection
+    url: collections/lexoffice.postman_collection.json
+  - type: OpenCollection
+    url: collections/lexoffice.opencollection.json
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#invoices-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#quotations-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#order-confirmations-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#delivery-notes-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#credit-notes-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#dunnings-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#vouchers-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#event-subscriptions-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#payments-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#profile-endpoint
+- aid: lexoffice:lexoffice-profile-api
+  name: lexoffice Profile API
+  description: Account profile and reference metadata.
+  humanURL: https://developers.lexware.io/docs/#contacts-endpoint
+  baseURL: https://api.lexware.io/v1
   tags:
   - Profile
-  - Metadata
-  - Recurring Templates
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://developers.lexware.io/docs/#profile-endpoint
-  baseURL: https://api.lexware.io/v1
   properties:
-  - url: https://developers.lexware.io/docs/#profile-endpoint
-    type: APIReference
-  - url: openapi/lexoffice-openapi.yml
-    type: OpenAPI
-  - url: collections/lexoffice.opencollection.json
-    type: OpenCollection
-  description: Read account profile and connection metadata, the list of supported
-    countries, posting categories used to classify vouchers, and recurring
-    templates that generate recurring invoices.
+  - type: OpenAPI
+    url: openapi/lexoffice-profile-api-openapi.yml
+  - type: Documentation
+    url: https://developers.lexware.io/docs/
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#contacts-endpoint
+  - type: PostmanCollection
+    url: collections/lexoffice.postman_collection.json
+  - type: OpenCollection
+    url: collections/lexoffice.opencollection.json
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#invoices-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#quotations-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#order-confirmations-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#delivery-notes-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#credit-notes-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#dunnings-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#vouchers-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#event-subscriptions-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#payments-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#profile-endpoint
+- aid: lexoffice:lexoffice-quotations-api
+  name: lexoffice Quotations API
+  description: Sales quotations / offers.
+  humanURL: https://developers.lexware.io/docs/#contacts-endpoint
+  baseURL: https://api.lexware.io/v1
+  tags:
+  - Quotations
+  properties:
+  - type: OpenAPI
+    url: openapi/lexoffice-quotations-api-openapi.yml
+  - type: Documentation
+    url: https://developers.lexware.io/docs/
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#contacts-endpoint
+  - type: PostmanCollection
+    url: collections/lexoffice.postman_collection.json
+  - type: OpenCollection
+    url: collections/lexoffice.opencollection.json
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#invoices-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#quotations-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#order-confirmations-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#delivery-notes-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#credit-notes-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#dunnings-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#vouchers-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#event-subscriptions-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#payments-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#profile-endpoint
+- aid: lexoffice:lexoffice-recurring-templates-api
+  name: lexoffice Recurring Templates API
+  description: Templates that generate recurring invoices.
+  humanURL: https://developers.lexware.io/docs/#contacts-endpoint
+  baseURL: https://api.lexware.io/v1
+  tags:
+  - Recurring Templates
+  properties:
+  - type: OpenAPI
+    url: openapi/lexoffice-recurring-templates-api-openapi.yml
+  - type: Documentation
+    url: https://developers.lexware.io/docs/
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#contacts-endpoint
+  - type: PostmanCollection
+    url: collections/lexoffice.postman_collection.json
+  - type: OpenCollection
+    url: collections/lexoffice.opencollection.json
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#invoices-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#quotations-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#order-confirmations-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#delivery-notes-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#credit-notes-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#dunnings-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#vouchers-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#event-subscriptions-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#payments-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#profile-endpoint
+- aid: lexoffice:lexoffice-vouchers-api
+  name: lexoffice Vouchers API
+  description: Bookkeeping vouchers and the voucherlist search.
+  humanURL: https://developers.lexware.io/docs/#contacts-endpoint
+  baseURL: https://api.lexware.io/v1
+  tags:
+  - Vouchers
+  properties:
+  - type: OpenAPI
+    url: openapi/lexoffice-vouchers-api-openapi.yml
+  - type: Documentation
+    url: https://developers.lexware.io/docs/
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#contacts-endpoint
+  - type: PostmanCollection
+    url: collections/lexoffice.postman_collection.json
+  - type: OpenCollection
+    url: collections/lexoffice.opencollection.json
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#invoices-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#quotations-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#order-confirmations-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#delivery-notes-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#credit-notes-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#dunnings-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#vouchers-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#event-subscriptions-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#payments-endpoint
+  - type: APIReference
+    url: https://developers.lexware.io/docs/#profile-endpoint
 common:
 - type: AgenticAccess
   url: agentic-access/lexoffice-agentic-access.yml
