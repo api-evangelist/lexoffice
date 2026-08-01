@@ -1,0 +1,40 @@
+{
+  "provider": "lexoffice",
+  "sources": [
+    "lexoffice-contacts-api-openapi.yml",
+    "lexoffice-credit-notes-api-openapi.yml",
+    "lexoffice-delivery-notes-api-openapi.yml",
+    "lexoffice-down-payment-invoices-api-openapi.yml",
+    "lexoffice-dunnings-api-openapi.yml",
+    "lexoffice-event-subscriptions-api-openapi.yml",
+    "lexoffice-files-api-openapi.yml",
+    "lexoffice-invoices-api-openapi.yml",
+    "lexoffice-order-confirmations-api-openapi.yml",
+    "lexoffice-payments-api-openapi.yml",
+    "lexoffice-profile-api-openapi.yml",
+    "lexoffice-quotations-api-openapi.yml",
+    "lexoffice-recurring-templates-api-openapi.yml",
+    "lexoffice-vouchers-api-openapi.yml"
+  ],
+  "outputs": [
+    "lexoffice-contacts-api-openapi.yml",
+    "lexoffice-credit-notes-api-openapi.yml",
+    "lexoffice-delivery-notes-api-openapi.yml",
+    "lexoffice-down-payment-invoices-api-openapi.yml",
+    "lexoffice-dunnings-api-openapi.yml",
+    "lexoffice-event-subscriptions-api-openapi.yml",
+    "lexoffice-files-api-openapi.yml",
+    "lexoffice-invoices-api-openapi.yml",
+    "lexoffice-order-confirmations-api-openapi.yml",
+    "lexoffice-payments-api-openapi.yml",
+    "lexoffice-profile-api-openapi.yml",
+    "lexoffice-quotations-api-openapi.yml",
+    "lexoffice-recurring-templates-api-openapi.yml",
+    "lexoffice-vouchers-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
