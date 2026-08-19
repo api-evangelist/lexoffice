@@ -1,0 +1,1019 @@
+{
+  "item": [
+    {
+      "id": "b6aaca2e-85da-464e-b3a0-eafb357f1e49",
+      "name": "Contacts",
+      "description": {
+        "content": "Customers and vendors.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "19db0125-cd35-4c12-a436-3826457cbe85",
+          "name": "Filter and list contacts",
+          "request": {
+            "name": "Filter and list contacts",
+            "description": {
+              "content": "Returns a paged list of contacts. Supports filter query parameters such as email, name, number, customer, and vendor.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contacts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "number",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "vendor",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "0",
+                  "description": "Zero-based page index."
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "25",
+                  "description": "Page size (max 250 for most collections)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e761ef18-551f-4646-ac5f-2c1a68303bdc",
+              "name": "A page of contacts.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "customer",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "vendor",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "0"
+                    },
+                    {
+                      "key": "size",
+                      "value": "25"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"content\": [\n    {\n      \"id\": \"404ad223-6824-2e45-a589-472f4315a9b2\",\n      \"organizationId\": \"9d063d75-a9dc-43a5-a1bf-96f74ff1e7ac\",\n      \"version\": 8806,\n      \"roles\": {\n        \"customer\": {\n          \"number\": 7712\n        },\n        \"vendor\": {\n          \"number\": 1239\n        }\n      },\n      \"company\": {\n        \"name\": \"string\",\n        \"taxNumber\": \"string\",\n        \"vatRegistrationId\": \"string\",\n        \"allowTaxFreeInvoices\": false,\n        \"contactPersons\": [\n          {\n            \"salutation\": \"string\",\n            \"firstName\": \"string\",\n            \"lastName\": \"string\",\n            \"emailAddress\": \"string\",\n            \"phoneNumber\": \"string\"\n          },\n          {\n            \"salutation\": \"string\",\n            \"firstName\": \"string\",\n            \"lastName\": \"string\",\n            \"emailAddress\": \"string\",\n            \"phoneNumber\": \"string\"\n          }\n        ]\n      },\n      \"person\": {\n        \"salutation\": \"string\",\n        \"firstName\": \"string\",\n        \"lastName\": \"string\"\n      },\n      \"addresses\": {\n        \"billing\": [\n          {\n            \"supplement\": \"string\",\n            \"street\": \"string\",\n            \"zip\": \"string\",\n            \"city\": \"string\",\n            \"countryCode\": \"DE\"\n          },\n          {\n            \"supplement\": \"string\",\n            \"street\": \"string\",\n            \"zip\": \"string\",\n            \"city\": \"string\",\n            \"countryCode\": \"DE\"\n          }\n        ],\n        \"shipping\": [\n          {\n            \"supplement\": \"string\",\n            \"street\": \"string\",\n            \"zip\": \"string\",\n            \"city\": \"string\",\n            \"countryCode\": \"DE\"\n          },\n          {\n            \"supplement\": \"string\",\n            \"street\": \"string\",\n            \"zip\": \"string\",\n            \"city\": \"string\",\n            \"countryCode\": \"DE\"\n          }\n        ]\n      },\n      \"emailAddresses\": {\n        \"key_0\": true,\n        \"key_1\": false\n      },\n      \"phoneNumbers\": {\n        \"key_0\": false,\n        \"key_1\": false,\n        \"key_2\": 466.24143582047026\n      },\n      \"note\": \"string\",\n      \"archived\": true\n    },\n    {\n      \"id\": \"f2fb0a70-17ff-2fd8-8cc2-214b41b32e06\",\n      \"organizationId\": \"3613dde2-c548-93ab-c27a-96dec348cf4f\",\n      \"version\": 3670,\n      \"roles\": {\n        \"customer\": {\n          \"number\": 8880\n        },\n        \"vendor\": {\n          \"number\": 996\n        }\n      },\n      \"company\": {\n        \"name\": \"string\",\n        \"taxNumber\": \"string\",\n        \"vatRegistrationId\": \"string\",\n        \"allowTaxFreeInvoices\": true,\n        \"contactPersons\": [\n          {\n            \"salutation\": \"string\",\n            \"firstName\": \"string\",\n            \"lastName\": \"string\",\n            \"emailAddress\": \"string\",\n            \"phoneNumber\": \"string\"\n          },\n          {\n            \"salutation\": \"string\",\n            \"firstName\": \"string\",\n            \"lastName\": \"string\",\n            \"emailAddress\": \"string\",\n            \"phoneNumber\": \"string\"\n          }\n        ]\n      },\n      \"person\": {\n        \"salutation\": \"string\",\n        \"firstName\": \"string\",\n        \"lastName\": \"string\"\n      },\n      \"addresses\": {\n        \"billing\": [\n          {\n            \"supplement\": \"string\",\n            \"street\": \"string\",\n            \"zip\": \"string\",\n            \"city\": \"string\",\n            \"countryCode\": \"DE\"\n          },\n          {\n            \"supplement\": \"string\",\n            \"street\": \"string\",\n            \"zip\": \"string\",\n            \"city\": \"string\",\n            \"countryCode\": \"DE\"\n          }\n        ],\n        \"shipping\": [\n          {\n            \"supplement\": \"string\",\n            \"street\": \"string\",\n            \"zip\": \"string\",\n            \"city\": \"string\",\n            \"countryCode\": \"DE\"\n          },\n          {\n            \"supplement\": \"string\",\n            \"street\": \"string\",\n            \"zip\": \"string\",\n            \"city\": \"string\",\n            \"countryCode\": \"DE\"\n          }\n        ]\n      },\n      \"emailAddresses\": {\n        \"key_0\": \"string\",\n        \"key_1\": false\n      },\n      \"phoneNumbers\": {\n        \"key_0\": 1536\n      },\n      \"note\": \"string\",\n      \"archived\": true\n    }\n  ],\n  \"totalPages\": 7107,\n  \"totalElements\": 7736,\n  \"size\": 9089,\n  \"number\": 6555\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "01617dfb-df0d-4673-8908-9ba4adc1cd57",
+              "name": "Missing or invalid Bearer API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "customer",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "vendor",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "0"
+                    },
+                    {
+                      "key": "size",
+                      "value": "25"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"1969-10-20T13:30:51.835Z\",\n  \"status\": 7882,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1d914ecb-4a21-40c6-9613-e8746b432a1d",
+              "name": "Rate limit of 2 requests per second exceeded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "customer",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "vendor",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "0"
+                    },
+                    {
+                      "key": "size",
+                      "value": "25"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"1958-01-29T08:28:56.768Z\",\n  \"status\": 9192,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "faa83e25-e8f6-41df-91b6-f9296995ddd5",
+          "name": "Create a contact",
+          "request": {
+            "name": "Create a contact",
+            "description": {
+              "content": "Creates a new contact (customer and/or vendor).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contacts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"organizationId\": \"<uuid>\",\n  \"version\": \"<integer>\",\n  \"roles\": {\n    \"customer\": {\n      \"number\": \"<integer>\"\n    },\n    \"vendor\": {\n      \"number\": \"<integer>\"\n    }\n  },\n  \"company\": {\n    \"name\": \"<string>\",\n    \"taxNumber\": \"<string>\",\n    \"vatRegistrationId\": \"<string>\",\n    \"allowTaxFreeInvoices\": \"<boolean>\",\n    \"contactPersons\": [\n      {\n        \"salutation\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"emailAddress\": \"<string>\",\n        \"phoneNumber\": \"<string>\"\n      },\n      {\n        \"salutation\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"emailAddress\": \"<string>\",\n        \"phoneNumber\": \"<string>\"\n      }\n    ]\n  },\n  \"person\": {\n    \"salutation\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\"\n  },\n  \"addresses\": {\n    \"billing\": [\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"<string>\"\n      },\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"<string>\"\n      }\n    ],\n    \"shipping\": [\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"<string>\"\n      },\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"<string>\"\n      }\n    ]\n  },\n  \"emailAddresses\": {\n    \"key_0\": 42.15931237190329,\n    \"key_1\": true\n  },\n  \"phoneNumbers\": {\n    \"key_0\": \"string\",\n    \"key_1\": 5886.589322642238\n  },\n  \"note\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fd489ff1-3df2-4db2-9330-2bcf7d0bc5e0",
+              "name": "Reference to the created contact.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"organizationId\": \"<uuid>\",\n  \"version\": \"<integer>\",\n  \"roles\": {\n    \"customer\": {\n      \"number\": \"<integer>\"\n    },\n    \"vendor\": {\n      \"number\": \"<integer>\"\n    }\n  },\n  \"company\": {\n    \"name\": \"<string>\",\n    \"taxNumber\": \"<string>\",\n    \"vatRegistrationId\": \"<string>\",\n    \"allowTaxFreeInvoices\": \"<boolean>\",\n    \"contactPersons\": [\n      {\n        \"salutation\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"emailAddress\": \"<string>\",\n        \"phoneNumber\": \"<string>\"\n      },\n      {\n        \"salutation\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"emailAddress\": \"<string>\",\n        \"phoneNumber\": \"<string>\"\n      }\n    ]\n  },\n  \"person\": {\n    \"salutation\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\"\n  },\n  \"addresses\": {\n    \"billing\": [\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      },\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      }\n    ],\n    \"shipping\": [\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      },\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      }\n    ]\n  },\n  \"emailAddresses\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  },\n  \"phoneNumbers\": {\n    \"key_0\": 2845,\n    \"key_1\": \"string\",\n    \"key_2\": \"string\",\n    \"key_3\": 8981\n  },\n  \"note\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"90749ca4-579a-8da7-c6c9-15a34d5f4c1a\",\n  \"resourceUri\": \"https://iPCMSYRcuVTGqcLtJEfcVlZYwoRqyXD.quftvh3LPfDb3FV+0PeiLn15GBS87yZ-1EPx6Skb5\",\n  \"createdDate\": \"1951-07-13T03:48:53.914Z\",\n  \"updatedDate\": \"2025-11-08T06:22:24.932Z\",\n  \"version\": 6628\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "08c4bb23-9517-4392-a057-890d6080aa34",
+              "name": "The request payload failed validation.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"organizationId\": \"<uuid>\",\n  \"version\": \"<integer>\",\n  \"roles\": {\n    \"customer\": {\n      \"number\": \"<integer>\"\n    },\n    \"vendor\": {\n      \"number\": \"<integer>\"\n    }\n  },\n  \"company\": {\n    \"name\": \"<string>\",\n    \"taxNumber\": \"<string>\",\n    \"vatRegistrationId\": \"<string>\",\n    \"allowTaxFreeInvoices\": \"<boolean>\",\n    \"contactPersons\": [\n      {\n        \"salutation\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"emailAddress\": \"<string>\",\n        \"phoneNumber\": \"<string>\"\n      },\n      {\n        \"salutation\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"emailAddress\": \"<string>\",\n        \"phoneNumber\": \"<string>\"\n      }\n    ]\n  },\n  \"person\": {\n    \"salutation\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\"\n  },\n  \"addresses\": {\n    \"billing\": [\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      },\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      }\n    ],\n    \"shipping\": [\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      },\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      }\n    ]\n  },\n  \"emailAddresses\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  },\n  \"phoneNumbers\": {\n    \"key_0\": 2845,\n    \"key_1\": \"string\",\n    \"key_2\": \"string\",\n    \"key_3\": 8981\n  },\n  \"note\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"1958-01-29T08:28:56.768Z\",\n  \"status\": 9192,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "14d82c6d-6aae-48ed-adc4-f64f8aacd532",
+              "name": "Missing or invalid Bearer API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"organizationId\": \"<uuid>\",\n  \"version\": \"<integer>\",\n  \"roles\": {\n    \"customer\": {\n      \"number\": \"<integer>\"\n    },\n    \"vendor\": {\n      \"number\": \"<integer>\"\n    }\n  },\n  \"company\": {\n    \"name\": \"<string>\",\n    \"taxNumber\": \"<string>\",\n    \"vatRegistrationId\": \"<string>\",\n    \"allowTaxFreeInvoices\": \"<boolean>\",\n    \"contactPersons\": [\n      {\n        \"salutation\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"emailAddress\": \"<string>\",\n        \"phoneNumber\": \"<string>\"\n      },\n      {\n        \"salutation\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"emailAddress\": \"<string>\",\n        \"phoneNumber\": \"<string>\"\n      }\n    ]\n  },\n  \"person\": {\n    \"salutation\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\"\n  },\n  \"addresses\": {\n    \"billing\": [\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      },\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      }\n    ],\n    \"shipping\": [\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      },\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      }\n    ]\n  },\n  \"emailAddresses\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  },\n  \"phoneNumbers\": {\n    \"key_0\": 2845,\n    \"key_1\": \"string\",\n    \"key_2\": \"string\",\n    \"key_3\": 8981\n  },\n  \"note\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"1958-01-29T08:28:56.768Z\",\n  \"status\": 9192,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "020daa25-3f67-495c-9026-5a7fe353c043",
+              "name": "Rate limit of 2 requests per second exceeded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"organizationId\": \"<uuid>\",\n  \"version\": \"<integer>\",\n  \"roles\": {\n    \"customer\": {\n      \"number\": \"<integer>\"\n    },\n    \"vendor\": {\n      \"number\": \"<integer>\"\n    }\n  },\n  \"company\": {\n    \"name\": \"<string>\",\n    \"taxNumber\": \"<string>\",\n    \"vatRegistrationId\": \"<string>\",\n    \"allowTaxFreeInvoices\": \"<boolean>\",\n    \"contactPersons\": [\n      {\n        \"salutation\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"emailAddress\": \"<string>\",\n        \"phoneNumber\": \"<string>\"\n      },\n      {\n        \"salutation\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"emailAddress\": \"<string>\",\n        \"phoneNumber\": \"<string>\"\n      }\n    ]\n  },\n  \"person\": {\n    \"salutation\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\"\n  },\n  \"addresses\": {\n    \"billing\": [\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      },\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      }\n    ],\n    \"shipping\": [\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      },\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      }\n    ]\n  },\n  \"emailAddresses\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  },\n  \"phoneNumbers\": {\n    \"key_0\": 2845,\n    \"key_1\": \"string\",\n    \"key_2\": \"string\",\n    \"key_3\": 8981\n  },\n  \"note\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"1958-01-29T08:28:56.768Z\",\n  \"status\": 9192,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0e390ae3-03c5-4f73-ad31-33f50b483bc1",
+          "name": "Retrieve a contact",
+          "request": {
+            "name": "Retrieve a contact",
+            "description": {
+              "content": "Retrieves a single contact by its UUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contacts",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) The UUID of the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7ce9645c-0bb8-4917-9e43-09ca4661a1e4",
+              "name": "The requested contact.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"ae645bbe-f247-6b2b-cf82-48f1f2cfc89c\",\n  \"organizationId\": \"<uuid>\",\n  \"version\": \"<integer>\",\n  \"roles\": {\n    \"customer\": {\n      \"number\": \"<integer>\"\n    },\n    \"vendor\": {\n      \"number\": \"<integer>\"\n    }\n  },\n  \"company\": {\n    \"name\": \"<string>\",\n    \"taxNumber\": \"<string>\",\n    \"vatRegistrationId\": \"<string>\",\n    \"allowTaxFreeInvoices\": \"<boolean>\",\n    \"contactPersons\": [\n      {\n        \"salutation\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"emailAddress\": \"<string>\",\n        \"phoneNumber\": \"<string>\"\n      },\n      {\n        \"salutation\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"emailAddress\": \"<string>\",\n        \"phoneNumber\": \"<string>\"\n      }\n    ]\n  },\n  \"person\": {\n    \"salutation\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\"\n  },\n  \"addresses\": {\n    \"billing\": [\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      },\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      }\n    ],\n    \"shipping\": [\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      },\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      }\n    ]\n  },\n  \"emailAddresses\": {\n    \"key_0\": \"string\",\n    \"key_1\": 2739\n  },\n  \"phoneNumbers\": {\n    \"key_0\": true,\n    \"key_1\": 6205.495142936733\n  },\n  \"note\": \"<string>\",\n  \"archived\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a606d835-273e-4c95-aa30-895c1ed53ecd",
+              "name": "Missing or invalid Bearer API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"1958-01-29T08:28:56.768Z\",\n  \"status\": 9192,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1332ac51-7860-451c-a110-42685359fff7",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"1958-01-29T08:28:56.768Z\",\n  \"status\": 9192,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "88c85aa9-e8bc-441e-94cf-c40eb6934aa7",
+          "name": "Update a contact",
+          "request": {
+            "name": "Update a contact",
+            "description": {
+              "content": "Updates an existing contact. The current version number must be supplied for optimistic locking.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contacts",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) The UUID of the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"organizationId\": \"<uuid>\",\n  \"version\": \"<integer>\",\n  \"roles\": {\n    \"customer\": {\n      \"number\": \"<integer>\"\n    },\n    \"vendor\": {\n      \"number\": \"<integer>\"\n    }\n  },\n  \"company\": {\n    \"name\": \"<string>\",\n    \"taxNumber\": \"<string>\",\n    \"vatRegistrationId\": \"<string>\",\n    \"allowTaxFreeInvoices\": \"<boolean>\",\n    \"contactPersons\": [\n      {\n        \"salutation\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"emailAddress\": \"<string>\",\n        \"phoneNumber\": \"<string>\"\n      },\n      {\n        \"salutation\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"emailAddress\": \"<string>\",\n        \"phoneNumber\": \"<string>\"\n      }\n    ]\n  },\n  \"person\": {\n    \"salutation\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\"\n  },\n  \"addresses\": {\n    \"billing\": [\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"<string>\"\n      },\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"<string>\"\n      }\n    ],\n    \"shipping\": [\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"<string>\"\n      },\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"<string>\"\n      }\n    ]\n  },\n  \"emailAddresses\": {\n    \"key_0\": 42.15931237190329,\n    \"key_1\": true\n  },\n  \"phoneNumbers\": {\n    \"key_0\": \"string\",\n    \"key_1\": 5886.589322642238\n  },\n  \"note\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ba470789-623a-4b0e-85a6-b08c0bd24041",
+              "name": "Reference to the updated contact.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"organizationId\": \"<uuid>\",\n  \"version\": \"<integer>\",\n  \"roles\": {\n    \"customer\": {\n      \"number\": \"<integer>\"\n    },\n    \"vendor\": {\n      \"number\": \"<integer>\"\n    }\n  },\n  \"company\": {\n    \"name\": \"<string>\",\n    \"taxNumber\": \"<string>\",\n    \"vatRegistrationId\": \"<string>\",\n    \"allowTaxFreeInvoices\": \"<boolean>\",\n    \"contactPersons\": [\n      {\n        \"salutation\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"emailAddress\": \"<string>\",\n        \"phoneNumber\": \"<string>\"\n      },\n      {\n        \"salutation\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"emailAddress\": \"<string>\",\n        \"phoneNumber\": \"<string>\"\n      }\n    ]\n  },\n  \"person\": {\n    \"salutation\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\"\n  },\n  \"addresses\": {\n    \"billing\": [\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      },\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      }\n    ],\n    \"shipping\": [\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      },\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      }\n    ]\n  },\n  \"emailAddresses\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  },\n  \"phoneNumbers\": {\n    \"key_0\": 2845,\n    \"key_1\": \"string\",\n    \"key_2\": \"string\",\n    \"key_3\": 8981\n  },\n  \"note\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"90749ca4-579a-8da7-c6c9-15a34d5f4c1a\",\n  \"resourceUri\": \"https://iPCMSYRcuVTGqcLtJEfcVlZYwoRqyXD.quftvh3LPfDb3FV+0PeiLn15GBS87yZ-1EPx6Skb5\",\n  \"createdDate\": \"1951-07-13T03:48:53.914Z\",\n  \"updatedDate\": \"2025-11-08T06:22:24.932Z\",\n  \"version\": 6628\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f10b2a81-d730-4ca7-8b7d-53e96b37d756",
+              "name": "Missing or invalid Bearer API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"organizationId\": \"<uuid>\",\n  \"version\": \"<integer>\",\n  \"roles\": {\n    \"customer\": {\n      \"number\": \"<integer>\"\n    },\n    \"vendor\": {\n      \"number\": \"<integer>\"\n    }\n  },\n  \"company\": {\n    \"name\": \"<string>\",\n    \"taxNumber\": \"<string>\",\n    \"vatRegistrationId\": \"<string>\",\n    \"allowTaxFreeInvoices\": \"<boolean>\",\n    \"contactPersons\": [\n      {\n        \"salutation\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"emailAddress\": \"<string>\",\n        \"phoneNumber\": \"<string>\"\n      },\n      {\n        \"salutation\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"emailAddress\": \"<string>\",\n        \"phoneNumber\": \"<string>\"\n      }\n    ]\n  },\n  \"person\": {\n    \"salutation\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\"\n  },\n  \"addresses\": {\n    \"billing\": [\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      },\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      }\n    ],\n    \"shipping\": [\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      },\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      }\n    ]\n  },\n  \"emailAddresses\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  },\n  \"phoneNumbers\": {\n    \"key_0\": 2845,\n    \"key_1\": \"string\",\n    \"key_2\": \"string\",\n    \"key_3\": 8981\n  },\n  \"note\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"1958-01-29T08:28:56.768Z\",\n  \"status\": 9192,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "53d1734a-d516-41a3-b7ff-3e13f617ad6a",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"organizationId\": \"<uuid>\",\n  \"version\": \"<integer>\",\n  \"roles\": {\n    \"customer\": {\n      \"number\": \"<integer>\"\n    },\n    \"vendor\": {\n      \"number\": \"<integer>\"\n    }\n  },\n  \"company\": {\n    \"name\": \"<string>\",\n    \"taxNumber\": \"<string>\",\n    \"vatRegistrationId\": \"<string>\",\n    \"allowTaxFreeInvoices\": \"<boolean>\",\n    \"contactPersons\": [\n      {\n        \"salutation\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"emailAddress\": \"<string>\",\n        \"phoneNumber\": \"<string>\"\n      },\n      {\n        \"salutation\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"emailAddress\": \"<string>\",\n        \"phoneNumber\": \"<string>\"\n      }\n    ]\n  },\n  \"person\": {\n    \"salutation\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\"\n  },\n  \"addresses\": {\n    \"billing\": [\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      },\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      }\n    ],\n    \"shipping\": [\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      },\n      {\n        \"supplement\": \"<string>\",\n        \"street\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"countryCode\": \"DE\"\n      }\n    ]\n  },\n  \"emailAddresses\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  },\n  \"phoneNumbers\": {\n    \"key_0\": 2845,\n    \"key_1\": \"string\",\n    \"key_2\": \"string\",\n    \"key_3\": 8981\n  },\n  \"note\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"1958-01-29T08:28:56.768Z\",\n  \"status\": 9192,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.lexware.io/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "1cc461a8-70fe-438b-a803-21ca016c5fec",
+    "name": "lexoffice (lexware Office) Public Contacts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public REST API for lexoffice, the German cloud accounting and invoicing SaaS from Lexware (Haufe Group), rebranded to \"lexware Office\" in 2025. The API lets developers push and pull business data - contacts, invoices, quotations, order confirmations, delivery notes, credit notes, dunnings, bookkeeping vouchers, files, payments, and profile metadata - and subscribe to webhooks through event subscriptions. All requests are authenticated with a Bearer API key generated by the account owner at https://app.lexware.de/addons/public-api. The API is rate limited to 2 requests per second per client (HTTP 429 on exceed). The API gateway moved from api.lexoffice.io to api.lexware.io on 26 May 2025; the legacy host remained available through December 2025. This document is a representative, hand-authored subset grounded in the public documentation at https://developers.lexware.io/docs/ - it is not the vendor's own machine-readable specification.\n\nContact Support:\n Name: lexware Office Developers",
+      "type": "text/plain"
+    }
+  }
+}

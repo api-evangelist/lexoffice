@@ -1,0 +1,54 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "lexoffice (lexware Office) Public Contacts Payments API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Payments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve payment status for a voucher",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.lexware.io/v1/payments/:voucherId",
+            "params": [
+              {
+                "name": "voucherId",
+                "value": "",
+                "type": "path",
+                "description": "The UUID of the voucher whose payment status is requested."
+              }
+            ]
+          },
+          "docs": "Returns the open amount, payment status, and recorded payment items for a given voucher (invoice, credit note, etc.)."
+        },
+        {
+          "info": {
+            "name": "List payment conditions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.lexware.io/v1/payment-conditions"
+          },
+          "docs": "Returns the payment conditions (terms and cash discounts) configured in the account."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

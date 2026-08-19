@@ -1,0 +1,85 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "lexoffice (lexware Office) Public Contacts Invoices API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Invoices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create an invoice",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.lexware.io/v1/invoices",
+            "params": [
+              {
+                "name": "finalize",
+                "value": "",
+                "type": "query",
+                "description": "Create the invoice in the open status instead of as a draft."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates an invoice. By default the invoice is created as a draft; pass finalize=true to create it directly in the open status."
+        },
+        {
+          "info": {
+            "name": "Retrieve an invoice",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.lexware.io/v1/invoices/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The UUID of the resource."
+              }
+            ]
+          },
+          "docs": "Retrieves a single invoice by its UUID."
+        },
+        {
+          "info": {
+            "name": "Request the invoice PDF",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.lexware.io/v1/invoices/:id/document",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The UUID of the resource."
+              }
+            ]
+          },
+          "docs": "Triggers or retrieves the rendered PDF for a finalized invoice and returns a documentFileId used to download the file via the Files endpoint."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

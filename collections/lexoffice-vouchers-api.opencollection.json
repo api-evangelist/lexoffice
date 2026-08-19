@@ -1,0 +1,147 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "lexoffice (lexware Office) Public Contacts Vouchers API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Vouchers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a bookkeeping voucher",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.lexware.io/v1/vouchers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a bookkeeping voucher (sales/purchase invoice or credit note) for preliminary accounting, with voucher items and an optional receipt file."
+        },
+        {
+          "info": {
+            "name": "Retrieve a voucher",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.lexware.io/v1/vouchers/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The UUID of the resource."
+              }
+            ]
+          },
+          "docs": "Retrieve a voucher"
+        },
+        {
+          "info": {
+            "name": "Update a voucher",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.lexware.io/v1/vouchers/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The UUID of the resource."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a voucher"
+        },
+        {
+          "info": {
+            "name": "Delete a voucher",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.lexware.io/v1/vouchers/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The UUID of the resource."
+              }
+            ]
+          },
+          "docs": "Delete a voucher"
+        },
+        {
+          "info": {
+            "name": "Search the voucher list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.lexware.io/v1/voucherlist",
+            "params": [
+              {
+                "name": "voucherType",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated voucher types (e.g. invoice, salesinvoice, purchaseinvoice, creditnote, any)."
+              },
+              {
+                "name": "voucherStatus",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated statuses (e.g. draft, open, paid, paidoff, voided, transferred, sepadebit, overdue, any)."
+              },
+              {
+                "name": "archived",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "contactId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Zero-based page index."
+              },
+              {
+                "name": "size",
+                "value": "",
+                "type": "query",
+                "description": "Page size (max 250 for most collections)."
+              }
+            ]
+          },
+          "docs": "Returns a paged, filterable list of all voucher-type documents (invoices, credit notes, vouchers, etc.). The voucherType and voucherStatus filters are required."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

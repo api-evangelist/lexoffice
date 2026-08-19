@@ -1,0 +1,238 @@
+{
+  "item": [
+    {
+      "id": "c028db6f-c2b1-47c8-8c3a-dc86e89e8a68",
+      "name": "Down Payment Invoices",
+      "description": {
+        "content": "Down payment invoice documents.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4968f61d-25e3-4622-967d-d98bd9af0d15",
+          "name": "Retrieve a down payment invoice",
+          "request": {
+            "name": "Retrieve a down payment invoice",
+            "description": {},
+            "url": {
+              "path": [
+                "down-payment-invoices",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) The UUID of the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fda795c1-b94c-4a74-a8b1-63459173b61e",
+              "name": "The requested down payment invoice.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "down-payment-invoices",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"8f1f76fe-98ad-b098-4c8e-cc5f2a2aead7\",\n  \"organizationId\": \"47726465-32fe-afd9-9d23-2e5c1e217d42\",\n  \"version\": 9186,\n  \"language\": \"de\",\n  \"archived\": true,\n  \"voucherStatus\": \"string\",\n  \"voucherNumber\": \"string\",\n  \"voucherDate\": \"2025-09-14T08:53:08.390Z\",\n  \"address\": {\n    \"contactId\": \"da1fac05-07de-d827-4b0a-84e792bb5dc1\",\n    \"name\": \"string\",\n    \"street\": \"string\",\n    \"zip\": \"string\",\n    \"city\": \"string\",\n    \"countryCode\": \"string\"\n  },\n  \"lineItems\": [\n    {\n      \"id\": \"b0520701-11c3-6bc6-0264-6e7c49ede2e3\",\n      \"type\": \"custom\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"quantity\": 4219.251518451315,\n      \"unitName\": \"string\",\n      \"unitPrice\": {\n        \"currency\": \"EUR\",\n        \"netAmount\": 3649.890306517317,\n        \"grossAmount\": 8089.121880528063,\n        \"taxRatePercentage\": 3490.1104648001924\n      },\n      \"discountPercentage\": 4179.257051277172,\n      \"lineItemAmount\": 7214.292984647237\n    },\n    {\n      \"id\": \"22a8e433-7f97-9913-8423-4aa2ad253a3b\",\n      \"type\": \"text\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"quantity\": 395.1963829238769,\n      \"unitName\": \"string\",\n      \"unitPrice\": {\n        \"currency\": \"EUR\",\n        \"netAmount\": 4170.8283752873585,\n        \"grossAmount\": 6282.818433929877,\n        \"taxRatePercentage\": 9864.29596916825\n      },\n      \"discountPercentage\": 8195.778746093805,\n      \"lineItemAmount\": 3666.2200850460704\n    }\n  ],\n  \"totalPrice\": {\n    \"currency\": \"EUR\",\n    \"totalNetAmount\": 6113.458343463606,\n    \"totalGrossAmount\": 411.5627174598013,\n    \"totalTaxAmount\": 4368.2768450356025\n  },\n  \"taxConditions\": {\n    \"taxType\": \"externalService13b\",\n    \"taxTypeNote\": \"string\"\n  },\n  \"title\": \"string\",\n  \"introduction\": \"string\",\n  \"remark\": \"string\",\n  \"dueDate\": \"2021-08-06T17:06:34.355Z\",\n  \"shippingConditions\": {\n    \"shippingDate\": \"2011-10-29T03:50:04.483Z\",\n    \"shippingType\": \"string\"\n  },\n  \"paymentConditions\": {\n    \"paymentTermLabel\": \"string\",\n    \"paymentTermDuration\": 7164\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3b748fc1-83f7-42f1-b62b-56f8415428bb",
+              "name": "Missing or invalid Bearer API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "down-payment-invoices",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"1984-01-29T12:12:14.305Z\",\n  \"status\": 537,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b84338cb-26f3-4577-8536-51a4a33ca895",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "down-payment-invoices",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"1988-02-07T02:39:56.652Z\",\n  \"status\": 2216,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.lexware.io/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "f11130a5-2616-4ec5-90fb-54bf280862c3",
+    "name": "lexoffice (lexware Office) Public Contacts Down Payment Invoices API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public REST API for lexoffice, the German cloud accounting and invoicing SaaS from Lexware (Haufe Group), rebranded to \"lexware Office\" in 2025. The API lets developers push and pull business data - contacts, invoices, quotations, order confirmations, delivery notes, credit notes, dunnings, bookkeeping vouchers, files, payments, and profile metadata - and subscribe to webhooks through event subscriptions. All requests are authenticated with a Bearer API key generated by the account owner at https://app.lexware.de/addons/public-api. The API is rate limited to 2 requests per second per client (HTTP 429 on exceed). The API gateway moved from api.lexoffice.io to api.lexware.io on 26 May 2025; the legacy host remained available through December 2025. This document is a representative, hand-authored subset grounded in the public documentation at https://developers.lexware.io/docs/ - it is not the vendor's own machine-readable specification.\n\nContact Support:\n Name: lexware Office Developers",
+      "type": "text/plain"
+    }
+  }
+}

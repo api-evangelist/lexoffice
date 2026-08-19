@@ -1,0 +1,404 @@
+{
+  "item": [
+    {
+      "id": "b87de0a4-d69a-475c-bfb6-057b5ef809ce",
+      "name": "Profile",
+      "description": {
+        "content": "Account profile and reference metadata.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "39b7bf2a-5157-4733-9651-66a3bedd38a9",
+          "name": "Retrieve the account profile",
+          "request": {
+            "name": "Retrieve the account profile",
+            "description": {
+              "content": "Returns the connected organization's profile and connection metadata.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "profile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e1fa7674-8a17-449f-8add-379cf54c7ec5",
+              "name": "The account profile.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"organizationId\": \"5a93a4df-7475-7c35-c15b-a5b499a90012\",\n  \"companyName\": \"string\",\n  \"created\": {\n    \"userId\": \"b14b0148-94ff-6a4b-b07b-b9300e5cb360\",\n    \"userName\": \"string\",\n    \"userEmail\": \"string\",\n    \"date\": \"1949-03-24T06:10:25.974Z\"\n  },\n  \"connectionId\": \"c49f10b2-4526-a947-daa4-a2b6a40d097f\",\n  \"taxType\": \"string\",\n  \"smallBusiness\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "02a3a4c4-0825-464f-9d31-a7ee801054a9",
+              "name": "Missing or invalid Bearer API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"1999-01-06T17:50:49.272Z\",\n  \"status\": 9160,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "54a84aca-d951-4689-9068-548e94adb94c",
+          "name": "List countries",
+          "request": {
+            "name": "List countries",
+            "description": {
+              "content": "Returns the list of countries supported by lexoffice with tax classification.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "countries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9b7689b0-571e-44a3-bdfd-d7355875a528",
+              "name": "A list of countries.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "countries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"countryCode\": \"DE\",\n    \"countryNameEN\": \"string\",\n    \"countryNameDE\": \"string\",\n    \"taxClassification\": \"de\"\n  },\n  {\n    \"countryCode\": \"DE\",\n    \"countryNameEN\": \"string\",\n    \"countryNameDE\": \"string\",\n    \"taxClassification\": \"thirdPartyCountry\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b6a42cee-119a-4e0c-ba84-828e71e11936",
+              "name": "Missing or invalid Bearer API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "countries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"2011-02-05T07:59:37.153Z\",\n  \"status\": 9186,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "100ae758-cad7-4a72-8cef-5a7e2216f9d1",
+          "name": "List posting categories",
+          "request": {
+            "name": "List posting categories",
+            "description": {
+              "content": "Returns the posting categories used to classify voucher items for bookkeeping.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "posting-categories"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8b39a462-64e1-4ca8-946b-3673a1435ce6",
+              "name": "A list of posting categories.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "posting-categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"59b6560d-5447-9875-4333-00607d5b81c8\",\n    \"name\": \"string\",\n    \"type\": \"outgo\",\n    \"contactRequired\": true,\n    \"splitAllowed\": true,\n    \"groupName\": \"string\"\n  },\n  {\n    \"id\": \"1420bd29-450c-bea7-f357-a7bab66f9ddb\",\n    \"name\": \"string\",\n    \"type\": \"outgo\",\n    \"contactRequired\": true,\n    \"splitAllowed\": false,\n    \"groupName\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "615829f6-62ae-4308-bb7f-0d4c806372af",
+              "name": "Missing or invalid Bearer API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "posting-categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"2011-02-05T07:59:37.153Z\",\n  \"status\": 9186,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.lexware.io/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "cf892df4-428a-4c66-a953-f319f67771b9",
+    "name": "lexoffice (lexware Office) Public Contacts Profile API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public REST API for lexoffice, the German cloud accounting and invoicing SaaS from Lexware (Haufe Group), rebranded to \"lexware Office\" in 2025. The API lets developers push and pull business data - contacts, invoices, quotations, order confirmations, delivery notes, credit notes, dunnings, bookkeeping vouchers, files, payments, and profile metadata - and subscribe to webhooks through event subscriptions. All requests are authenticated with a Bearer API key generated by the account owner at https://app.lexware.de/addons/public-api. The API is rate limited to 2 requests per second per client (HTTP 429 on exceed). The API gateway moved from api.lexoffice.io to api.lexware.io on 26 May 2025; the legacy host remained available through December 2025. This document is a representative, hand-authored subset grounded in the public documentation at https://developers.lexware.io/docs/ - it is not the vendor's own machine-readable specification.\n\nContact Support:\n Name: lexware Office Developers",
+      "type": "text/plain"
+    }
+  }
+}

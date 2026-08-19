@@ -1,0 +1,1191 @@
+{
+  "item": [
+    {
+      "id": "55da26a8-aa13-4c4a-b5e3-2d6a3e79d476",
+      "name": "Vouchers",
+      "description": {
+        "content": "Bookkeeping vouchers and the voucherlist search.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f8d97b03-1817-4023-bfb9-75bee644a715",
+          "name": "Create a bookkeeping voucher",
+          "request": {
+            "name": "Create a bookkeeping voucher",
+            "description": {
+              "content": "Creates a bookkeeping voucher (sales/purchase invoice or credit note) for preliminary accounting, with voucher items and an optional receipt file.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "vouchers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"<string>\",\n  \"voucherStatus\": \"<string>\",\n  \"voucherNumber\": \"<string>\",\n  \"voucherDate\": \"<dateTime>\",\n  \"shippingDate\": \"<dateTime>\",\n  \"dueDate\": \"<dateTime>\",\n  \"totalGrossAmount\": \"<number>\",\n  \"totalTaxAmount\": \"<number>\",\n  \"taxType\": \"<string>\",\n  \"useCollectiveContact\": \"<boolean>\",\n  \"contactId\": \"<uuid>\",\n  \"remark\": \"<string>\",\n  \"voucherItems\": [\n    {\n      \"amount\": \"<number>\",\n      \"taxAmount\": \"<number>\",\n      \"taxRatePercent\": \"<number>\",\n      \"categoryId\": \"<uuid>\"\n    },\n    {\n      \"amount\": \"<number>\",\n      \"taxAmount\": \"<number>\",\n      \"taxRatePercent\": \"<number>\",\n      \"categoryId\": \"<uuid>\"\n    }\n  ],\n  \"files\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"version\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3a12e49d-1e38-402e-9a0f-f419433e2ba1",
+              "name": "Reference to the created voucher.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vouchers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type\": \"<string>\",\n  \"voucherStatus\": \"<string>\",\n  \"voucherNumber\": \"<string>\",\n  \"voucherDate\": \"<dateTime>\",\n  \"shippingDate\": \"<dateTime>\",\n  \"dueDate\": \"<dateTime>\",\n  \"totalGrossAmount\": \"<number>\",\n  \"totalTaxAmount\": \"<number>\",\n  \"taxType\": \"<string>\",\n  \"useCollectiveContact\": \"<boolean>\",\n  \"contactId\": \"<uuid>\",\n  \"remark\": \"<string>\",\n  \"voucherItems\": [\n    {\n      \"amount\": \"<number>\",\n      \"taxAmount\": \"<number>\",\n      \"taxRatePercent\": \"<number>\",\n      \"categoryId\": \"<uuid>\"\n    },\n    {\n      \"amount\": \"<number>\",\n      \"taxAmount\": \"<number>\",\n      \"taxRatePercent\": \"<number>\",\n      \"categoryId\": \"<uuid>\"\n    }\n  ],\n  \"files\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"version\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"1c462437-9c0d-772a-0d64-a12007fa746a\",\n  \"resourceUri\": \"http://gEIUEikY.dgJjFohDt-LVp.gaxsA0cxoRecfRvO2D8mMyZaI59z8B\",\n  \"createdDate\": \"1973-12-12T15:33:39.331Z\",\n  \"updatedDate\": \"1961-01-01T14:59:11.795Z\",\n  \"version\": 3011\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2134ee7f-7133-4fd7-8d01-7756e9ba203e",
+              "name": "The request payload failed validation.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vouchers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type\": \"<string>\",\n  \"voucherStatus\": \"<string>\",\n  \"voucherNumber\": \"<string>\",\n  \"voucherDate\": \"<dateTime>\",\n  \"shippingDate\": \"<dateTime>\",\n  \"dueDate\": \"<dateTime>\",\n  \"totalGrossAmount\": \"<number>\",\n  \"totalTaxAmount\": \"<number>\",\n  \"taxType\": \"<string>\",\n  \"useCollectiveContact\": \"<boolean>\",\n  \"contactId\": \"<uuid>\",\n  \"remark\": \"<string>\",\n  \"voucherItems\": [\n    {\n      \"amount\": \"<number>\",\n      \"taxAmount\": \"<number>\",\n      \"taxRatePercent\": \"<number>\",\n      \"categoryId\": \"<uuid>\"\n    },\n    {\n      \"amount\": \"<number>\",\n      \"taxAmount\": \"<number>\",\n      \"taxRatePercent\": \"<number>\",\n      \"categoryId\": \"<uuid>\"\n    }\n  ],\n  \"files\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"version\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"1996-08-24T03:09:13.217Z\",\n  \"status\": 6431,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4e553cd9-09cd-4053-a1cb-dea2c41f6bb1",
+              "name": "Missing or invalid Bearer API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vouchers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type\": \"<string>\",\n  \"voucherStatus\": \"<string>\",\n  \"voucherNumber\": \"<string>\",\n  \"voucherDate\": \"<dateTime>\",\n  \"shippingDate\": \"<dateTime>\",\n  \"dueDate\": \"<dateTime>\",\n  \"totalGrossAmount\": \"<number>\",\n  \"totalTaxAmount\": \"<number>\",\n  \"taxType\": \"<string>\",\n  \"useCollectiveContact\": \"<boolean>\",\n  \"contactId\": \"<uuid>\",\n  \"remark\": \"<string>\",\n  \"voucherItems\": [\n    {\n      \"amount\": \"<number>\",\n      \"taxAmount\": \"<number>\",\n      \"taxRatePercent\": \"<number>\",\n      \"categoryId\": \"<uuid>\"\n    },\n    {\n      \"amount\": \"<number>\",\n      \"taxAmount\": \"<number>\",\n      \"taxRatePercent\": \"<number>\",\n      \"categoryId\": \"<uuid>\"\n    }\n  ],\n  \"files\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"version\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"1965-08-05T23:12:07.489Z\",\n  \"status\": 4451,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3fd31c5e-e53b-44ab-a1b0-4f410ab35974",
+              "name": "Rate limit of 2 requests per second exceeded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vouchers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type\": \"<string>\",\n  \"voucherStatus\": \"<string>\",\n  \"voucherNumber\": \"<string>\",\n  \"voucherDate\": \"<dateTime>\",\n  \"shippingDate\": \"<dateTime>\",\n  \"dueDate\": \"<dateTime>\",\n  \"totalGrossAmount\": \"<number>\",\n  \"totalTaxAmount\": \"<number>\",\n  \"taxType\": \"<string>\",\n  \"useCollectiveContact\": \"<boolean>\",\n  \"contactId\": \"<uuid>\",\n  \"remark\": \"<string>\",\n  \"voucherItems\": [\n    {\n      \"amount\": \"<number>\",\n      \"taxAmount\": \"<number>\",\n      \"taxRatePercent\": \"<number>\",\n      \"categoryId\": \"<uuid>\"\n    },\n    {\n      \"amount\": \"<number>\",\n      \"taxAmount\": \"<number>\",\n      \"taxRatePercent\": \"<number>\",\n      \"categoryId\": \"<uuid>\"\n    }\n  ],\n  \"files\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"version\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"1965-08-05T23:12:07.489Z\",\n  \"status\": 4451,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5a213c43-f48b-4d3e-a1d6-22aa37e715b1",
+          "name": "Retrieve a voucher",
+          "request": {
+            "name": "Retrieve a voucher",
+            "description": {},
+            "url": {
+              "path": [
+                "vouchers",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) The UUID of the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "67383977-b7d5-419f-9c54-1feb5d5d3255",
+              "name": "The requested voucher.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vouchers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"e822276d-704f-9925-5548-f6f103d73119\",\n  \"organizationId\": \"caa61e83-4052-ff26-bf29-092e32b2f428\",\n  \"type\": \"<string>\",\n  \"voucherStatus\": \"<string>\",\n  \"voucherNumber\": \"<string>\",\n  \"voucherDate\": \"<dateTime>\",\n  \"shippingDate\": \"<dateTime>\",\n  \"dueDate\": \"<dateTime>\",\n  \"totalGrossAmount\": \"<number>\",\n  \"totalTaxAmount\": \"<number>\",\n  \"taxType\": \"<string>\",\n  \"useCollectiveContact\": \"<boolean>\",\n  \"contactId\": \"<uuid>\",\n  \"remark\": \"<string>\",\n  \"voucherItems\": [\n    {\n      \"amount\": \"<number>\",\n      \"taxAmount\": \"<number>\",\n      \"taxRatePercent\": \"<number>\",\n      \"categoryId\": \"<uuid>\"\n    },\n    {\n      \"amount\": \"<number>\",\n      \"taxAmount\": \"<number>\",\n      \"taxRatePercent\": \"<number>\",\n      \"categoryId\": \"<uuid>\"\n    }\n  ],\n  \"files\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"version\": \"<integer>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "87e439ed-4754-4a6b-8996-ff55f22ee2ef",
+              "name": "Missing or invalid Bearer API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vouchers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"1965-08-05T23:12:07.489Z\",\n  \"status\": 4451,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2ebd2a27-17f9-40ee-8fef-004202fb96b5",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vouchers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"1965-08-05T23:12:07.489Z\",\n  \"status\": 4451,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "67197743-a777-41b5-93ff-a5ca9cb2aa01",
+          "name": "Update a voucher",
+          "request": {
+            "name": "Update a voucher",
+            "description": {},
+            "url": {
+              "path": [
+                "vouchers",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) The UUID of the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"<string>\",\n  \"voucherStatus\": \"<string>\",\n  \"voucherNumber\": \"<string>\",\n  \"voucherDate\": \"<dateTime>\",\n  \"shippingDate\": \"<dateTime>\",\n  \"dueDate\": \"<dateTime>\",\n  \"totalGrossAmount\": \"<number>\",\n  \"totalTaxAmount\": \"<number>\",\n  \"taxType\": \"<string>\",\n  \"useCollectiveContact\": \"<boolean>\",\n  \"contactId\": \"<uuid>\",\n  \"remark\": \"<string>\",\n  \"voucherItems\": [\n    {\n      \"amount\": \"<number>\",\n      \"taxAmount\": \"<number>\",\n      \"taxRatePercent\": \"<number>\",\n      \"categoryId\": \"<uuid>\"\n    },\n    {\n      \"amount\": \"<number>\",\n      \"taxAmount\": \"<number>\",\n      \"taxRatePercent\": \"<number>\",\n      \"categoryId\": \"<uuid>\"\n    }\n  ],\n  \"files\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"version\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "34407b68-bf52-4f3f-8865-74e73f50f480",
+              "name": "Reference to the updated voucher.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vouchers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type\": \"<string>\",\n  \"voucherStatus\": \"<string>\",\n  \"voucherNumber\": \"<string>\",\n  \"voucherDate\": \"<dateTime>\",\n  \"shippingDate\": \"<dateTime>\",\n  \"dueDate\": \"<dateTime>\",\n  \"totalGrossAmount\": \"<number>\",\n  \"totalTaxAmount\": \"<number>\",\n  \"taxType\": \"<string>\",\n  \"useCollectiveContact\": \"<boolean>\",\n  \"contactId\": \"<uuid>\",\n  \"remark\": \"<string>\",\n  \"voucherItems\": [\n    {\n      \"amount\": \"<number>\",\n      \"taxAmount\": \"<number>\",\n      \"taxRatePercent\": \"<number>\",\n      \"categoryId\": \"<uuid>\"\n    },\n    {\n      \"amount\": \"<number>\",\n      \"taxAmount\": \"<number>\",\n      \"taxRatePercent\": \"<number>\",\n      \"categoryId\": \"<uuid>\"\n    }\n  ],\n  \"files\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"version\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"1c462437-9c0d-772a-0d64-a12007fa746a\",\n  \"resourceUri\": \"http://gEIUEikY.dgJjFohDt-LVp.gaxsA0cxoRecfRvO2D8mMyZaI59z8B\",\n  \"createdDate\": \"1973-12-12T15:33:39.331Z\",\n  \"updatedDate\": \"1961-01-01T14:59:11.795Z\",\n  \"version\": 3011\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7357e493-69a9-40a5-a174-ffc42d02cfe6",
+              "name": "Missing or invalid Bearer API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vouchers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type\": \"<string>\",\n  \"voucherStatus\": \"<string>\",\n  \"voucherNumber\": \"<string>\",\n  \"voucherDate\": \"<dateTime>\",\n  \"shippingDate\": \"<dateTime>\",\n  \"dueDate\": \"<dateTime>\",\n  \"totalGrossAmount\": \"<number>\",\n  \"totalTaxAmount\": \"<number>\",\n  \"taxType\": \"<string>\",\n  \"useCollectiveContact\": \"<boolean>\",\n  \"contactId\": \"<uuid>\",\n  \"remark\": \"<string>\",\n  \"voucherItems\": [\n    {\n      \"amount\": \"<number>\",\n      \"taxAmount\": \"<number>\",\n      \"taxRatePercent\": \"<number>\",\n      \"categoryId\": \"<uuid>\"\n    },\n    {\n      \"amount\": \"<number>\",\n      \"taxAmount\": \"<number>\",\n      \"taxRatePercent\": \"<number>\",\n      \"categoryId\": \"<uuid>\"\n    }\n  ],\n  \"files\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"version\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"1965-08-05T23:12:07.489Z\",\n  \"status\": 4451,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a503b84d-762f-4fbd-a118-7275c5b393f6",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vouchers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type\": \"<string>\",\n  \"voucherStatus\": \"<string>\",\n  \"voucherNumber\": \"<string>\",\n  \"voucherDate\": \"<dateTime>\",\n  \"shippingDate\": \"<dateTime>\",\n  \"dueDate\": \"<dateTime>\",\n  \"totalGrossAmount\": \"<number>\",\n  \"totalTaxAmount\": \"<number>\",\n  \"taxType\": \"<string>\",\n  \"useCollectiveContact\": \"<boolean>\",\n  \"contactId\": \"<uuid>\",\n  \"remark\": \"<string>\",\n  \"voucherItems\": [\n    {\n      \"amount\": \"<number>\",\n      \"taxAmount\": \"<number>\",\n      \"taxRatePercent\": \"<number>\",\n      \"categoryId\": \"<uuid>\"\n    },\n    {\n      \"amount\": \"<number>\",\n      \"taxAmount\": \"<number>\",\n      \"taxRatePercent\": \"<number>\",\n      \"categoryId\": \"<uuid>\"\n    }\n  ],\n  \"files\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"version\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"1965-08-05T23:12:07.489Z\",\n  \"status\": 4451,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ceea8c5d-fad7-4ec1-8551-f3b3ef83874a",
+          "name": "Delete a voucher",
+          "request": {
+            "name": "Delete a voucher",
+            "description": {},
+            "url": {
+              "path": [
+                "vouchers",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) The UUID of the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5246e218-7e78-4f35-9e1e-82d3d7dab67c",
+              "name": "The voucher was deleted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vouchers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "772a19cb-f1f0-4723-b56e-9d5ff730bbf9",
+              "name": "Missing or invalid Bearer API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vouchers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"1965-08-05T23:12:07.489Z\",\n  \"status\": 4451,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0b76dbe1-60a0-491b-ab79-03644b3a6186",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vouchers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"1965-08-05T23:12:07.489Z\",\n  \"status\": 4451,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bff08499-5bc8-4ab4-87ae-5fff940f99d6",
+          "name": "Search the voucher list",
+          "request": {
+            "name": "Search the voucher list",
+            "description": {
+              "content": "Returns a paged, filterable list of all voucher-type documents (invoices, credit notes, vouchers, etc.). The voucherType and voucherStatus filters are required.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "voucherlist"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "voucherType",
+                  "value": "<string>",
+                  "description": "(Required) Comma-separated voucher types (e.g. invoice, salesinvoice, purchaseinvoice, creditnote, any)."
+                },
+                {
+                  "disabled": false,
+                  "key": "voucherStatus",
+                  "value": "<string>",
+                  "description": "(Required) Comma-separated statuses (e.g. draft, open, paid, paidoff, voided, transferred, sepadebit, overdue, any)."
+                },
+                {
+                  "disabled": false,
+                  "key": "archived",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "contactId",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "0",
+                  "description": "Zero-based page index."
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "25",
+                  "description": "Page size (max 250 for most collections)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "54433896-52d9-428d-88cf-de3cc50d4140",
+              "name": "A page of voucherlist entries.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voucherlist"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "voucherType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "voucherStatus",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "archived",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "contactId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "0"
+                    },
+                    {
+                      "key": "size",
+                      "value": "25"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"content\": [\n    {\n      \"id\": \"440a7bd6-349a-2b3d-c447-d7651dc9c8b5\",\n      \"voucherType\": \"string\",\n      \"voucherStatus\": \"string\",\n      \"voucherNumber\": \"string\",\n      \"voucherDate\": \"1980-10-09T18:45:00.066Z\",\n      \"dueDate\": \"1948-02-17T22:17:29.081Z\",\n      \"contactName\": \"string\",\n      \"totalAmount\": 6458.091824879112,\n      \"openAmount\": 5671.267261904987,\n      \"currency\": \"EUR\",\n      \"archived\": true\n    },\n    {\n      \"id\": \"7d6c2a34-e438-d3aa-294d-d92f3f6c940c\",\n      \"voucherType\": \"string\",\n      \"voucherStatus\": \"string\",\n      \"voucherNumber\": \"string\",\n      \"voucherDate\": \"2013-10-31T12:03:44.854Z\",\n      \"dueDate\": \"1982-05-10T18:02:56.984Z\",\n      \"contactName\": \"string\",\n      \"totalAmount\": 92.06538826972755,\n      \"openAmount\": 2547.6216079111946,\n      \"currency\": \"EUR\",\n      \"archived\": false\n    }\n  ],\n  \"totalPages\": 4953,\n  \"totalElements\": 4866,\n  \"size\": 1553,\n  \"number\": 8005\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "219e48a4-97a7-4214-bd63-2c1b73bffa40",
+              "name": "Missing or invalid Bearer API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voucherlist"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "voucherType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "voucherStatus",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "archived",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "contactId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "0"
+                    },
+                    {
+                      "key": "size",
+                      "value": "25"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"1965-08-05T23:12:07.489Z\",\n  \"status\": 4451,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "476b5e7a-935b-446c-a78a-6430d94db9f9",
+              "name": "Rate limit of 2 requests per second exceeded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voucherlist"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "voucherType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "voucherStatus",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "archived",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "contactId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "0"
+                    },
+                    {
+                      "key": "size",
+                      "value": "25"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"1965-08-05T23:12:07.489Z\",\n  \"status\": 4451,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.lexware.io/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "e35a9174-a90b-4494-82be-03df58c335a1",
+    "name": "lexoffice (lexware Office) Public Contacts Vouchers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public REST API for lexoffice, the German cloud accounting and invoicing SaaS from Lexware (Haufe Group), rebranded to \"lexware Office\" in 2025. The API lets developers push and pull business data - contacts, invoices, quotations, order confirmations, delivery notes, credit notes, dunnings, bookkeeping vouchers, files, payments, and profile metadata - and subscribe to webhooks through event subscriptions. All requests are authenticated with a Bearer API key generated by the account owner at https://app.lexware.de/addons/public-api. The API is rate limited to 2 requests per second per client (HTTP 429 on exceed). The API gateway moved from api.lexoffice.io to api.lexware.io on 26 May 2025; the legacy host remained available through December 2025. This document is a representative, hand-authored subset grounded in the public documentation at https://developers.lexware.io/docs/ - it is not the vendor's own machine-readable specification.\n\nContact Support:\n Name: lexware Office Developers",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,773 @@
+{
+  "item": [
+    {
+      "id": "ea84e11e-783a-457d-a516-b2728e009cca",
+      "name": "Invoices",
+      "description": {
+        "content": "Outgoing invoices.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8b191d43-5905-41ad-a3f2-e2672260bed9",
+          "name": "Create an invoice",
+          "request": {
+            "name": "Create an invoice",
+            "description": {
+              "content": "Creates an invoice. By default the invoice is created as a draft; pass finalize=true to create it directly in the open status.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "invoices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "finalize",
+                  "value": "false",
+                  "description": "Create the invoice in the open status instead of as a draft."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"organizationId\": \"<uuid>\",\n  \"version\": \"<integer>\",\n  \"language\": \"<string>\",\n  \"voucherDate\": \"<dateTime>\",\n  \"address\": {\n    \"contactId\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"street\": \"<string>\",\n    \"zip\": \"<string>\",\n    \"city\": \"<string>\",\n    \"countryCode\": \"<string>\"\n  },\n  \"lineItems\": [\n    {\n      \"id\": \"<uuid>\",\n      \"type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<number>\",\n      \"unitName\": \"<string>\",\n      \"unitPrice\": {\n        \"currency\": \"<string>\",\n        \"netAmount\": \"<number>\",\n        \"grossAmount\": \"<number>\",\n        \"taxRatePercentage\": \"<number>\"\n      },\n      \"discountPercentage\": \"<number>\",\n      \"lineItemAmount\": \"<number>\"\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<number>\",\n      \"unitName\": \"<string>\",\n      \"unitPrice\": {\n        \"currency\": \"<string>\",\n        \"netAmount\": \"<number>\",\n        \"grossAmount\": \"<number>\",\n        \"taxRatePercentage\": \"<number>\"\n      },\n      \"discountPercentage\": \"<number>\",\n      \"lineItemAmount\": \"<number>\"\n    }\n  ],\n  \"totalPrice\": {\n    \"currency\": \"<string>\",\n    \"totalNetAmount\": \"<number>\",\n    \"totalGrossAmount\": \"<number>\",\n    \"totalTaxAmount\": \"<number>\"\n  },\n  \"taxConditions\": {\n    \"taxType\": \"<string>\",\n    \"taxTypeNote\": \"<string>\"\n  },\n  \"title\": \"<string>\",\n  \"introduction\": \"<string>\",\n  \"remark\": \"<string>\",\n  \"dueDate\": \"<dateTime>\",\n  \"shippingConditions\": {\n    \"shippingDate\": \"<dateTime>\",\n    \"shippingType\": \"<string>\"\n  },\n  \"paymentConditions\": {\n    \"paymentTermLabel\": \"<string>\",\n    \"paymentTermDuration\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4ac92ff9-e2f3-49e4-b4a0-e13478fc3214",
+              "name": "Reference to the created invoice.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "invoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "finalize",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"organizationId\": \"<uuid>\",\n  \"version\": \"<integer>\",\n  \"language\": \"de\",\n  \"voucherDate\": \"<dateTime>\",\n  \"address\": {\n    \"contactId\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"street\": \"<string>\",\n    \"zip\": \"<string>\",\n    \"city\": \"<string>\",\n    \"countryCode\": \"<string>\"\n  },\n  \"lineItems\": [\n    {\n      \"id\": \"<uuid>\",\n      \"type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<number>\",\n      \"unitName\": \"<string>\",\n      \"unitPrice\": {\n        \"currency\": \"EUR\",\n        \"netAmount\": \"<number>\",\n        \"grossAmount\": \"<number>\",\n        \"taxRatePercentage\": \"<number>\"\n      },\n      \"discountPercentage\": \"<number>\",\n      \"lineItemAmount\": \"<number>\"\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<number>\",\n      \"unitName\": \"<string>\",\n      \"unitPrice\": {\n        \"currency\": \"EUR\",\n        \"netAmount\": \"<number>\",\n        \"grossAmount\": \"<number>\",\n        \"taxRatePercentage\": \"<number>\"\n      },\n      \"discountPercentage\": \"<number>\",\n      \"lineItemAmount\": \"<number>\"\n    }\n  ],\n  \"totalPrice\": {\n    \"currency\": \"EUR\",\n    \"totalNetAmount\": \"<number>\",\n    \"totalGrossAmount\": \"<number>\",\n    \"totalTaxAmount\": \"<number>\"\n  },\n  \"taxConditions\": {\n    \"taxType\": \"<string>\",\n    \"taxTypeNote\": \"<string>\"\n  },\n  \"title\": \"<string>\",\n  \"introduction\": \"<string>\",\n  \"remark\": \"<string>\",\n  \"dueDate\": \"<dateTime>\",\n  \"shippingConditions\": {\n    \"shippingDate\": \"<dateTime>\",\n    \"shippingType\": \"<string>\"\n  },\n  \"paymentConditions\": {\n    \"paymentTermLabel\": \"<string>\",\n    \"paymentTermDuration\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"46169705-bd39-d9a6-d92e-c81424252a96\",\n  \"resourceUri\": \"https://ceniFMcKKnfJchOuZd.raojf7IOOXrmzCd.U1F1eE8QWulP,gO6ikqOg2UvEDb,Q77Kn\",\n  \"createdDate\": \"1951-05-24T09:49:53.678Z\",\n  \"updatedDate\": \"1947-01-21T07:53:36.726Z\",\n  \"version\": 6525\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f1c6a99b-6d51-43d5-9da5-ecdb11bd8419",
+              "name": "The request payload failed validation.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "invoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "finalize",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"organizationId\": \"<uuid>\",\n  \"version\": \"<integer>\",\n  \"language\": \"de\",\n  \"voucherDate\": \"<dateTime>\",\n  \"address\": {\n    \"contactId\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"street\": \"<string>\",\n    \"zip\": \"<string>\",\n    \"city\": \"<string>\",\n    \"countryCode\": \"<string>\"\n  },\n  \"lineItems\": [\n    {\n      \"id\": \"<uuid>\",\n      \"type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<number>\",\n      \"unitName\": \"<string>\",\n      \"unitPrice\": {\n        \"currency\": \"EUR\",\n        \"netAmount\": \"<number>\",\n        \"grossAmount\": \"<number>\",\n        \"taxRatePercentage\": \"<number>\"\n      },\n      \"discountPercentage\": \"<number>\",\n      \"lineItemAmount\": \"<number>\"\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<number>\",\n      \"unitName\": \"<string>\",\n      \"unitPrice\": {\n        \"currency\": \"EUR\",\n        \"netAmount\": \"<number>\",\n        \"grossAmount\": \"<number>\",\n        \"taxRatePercentage\": \"<number>\"\n      },\n      \"discountPercentage\": \"<number>\",\n      \"lineItemAmount\": \"<number>\"\n    }\n  ],\n  \"totalPrice\": {\n    \"currency\": \"EUR\",\n    \"totalNetAmount\": \"<number>\",\n    \"totalGrossAmount\": \"<number>\",\n    \"totalTaxAmount\": \"<number>\"\n  },\n  \"taxConditions\": {\n    \"taxType\": \"<string>\",\n    \"taxTypeNote\": \"<string>\"\n  },\n  \"title\": \"<string>\",\n  \"introduction\": \"<string>\",\n  \"remark\": \"<string>\",\n  \"dueDate\": \"<dateTime>\",\n  \"shippingConditions\": {\n    \"shippingDate\": \"<dateTime>\",\n    \"shippingType\": \"<string>\"\n  },\n  \"paymentConditions\": {\n    \"paymentTermLabel\": \"<string>\",\n    \"paymentTermDuration\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"1997-10-28T14:31:22.206Z\",\n  \"status\": 5515,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "40ab7130-7c30-4282-8207-11e276ff8bae",
+              "name": "Missing or invalid Bearer API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "invoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "finalize",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"organizationId\": \"<uuid>\",\n  \"version\": \"<integer>\",\n  \"language\": \"de\",\n  \"voucherDate\": \"<dateTime>\",\n  \"address\": {\n    \"contactId\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"street\": \"<string>\",\n    \"zip\": \"<string>\",\n    \"city\": \"<string>\",\n    \"countryCode\": \"<string>\"\n  },\n  \"lineItems\": [\n    {\n      \"id\": \"<uuid>\",\n      \"type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<number>\",\n      \"unitName\": \"<string>\",\n      \"unitPrice\": {\n        \"currency\": \"EUR\",\n        \"netAmount\": \"<number>\",\n        \"grossAmount\": \"<number>\",\n        \"taxRatePercentage\": \"<number>\"\n      },\n      \"discountPercentage\": \"<number>\",\n      \"lineItemAmount\": \"<number>\"\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<number>\",\n      \"unitName\": \"<string>\",\n      \"unitPrice\": {\n        \"currency\": \"EUR\",\n        \"netAmount\": \"<number>\",\n        \"grossAmount\": \"<number>\",\n        \"taxRatePercentage\": \"<number>\"\n      },\n      \"discountPercentage\": \"<number>\",\n      \"lineItemAmount\": \"<number>\"\n    }\n  ],\n  \"totalPrice\": {\n    \"currency\": \"EUR\",\n    \"totalNetAmount\": \"<number>\",\n    \"totalGrossAmount\": \"<number>\",\n    \"totalTaxAmount\": \"<number>\"\n  },\n  \"taxConditions\": {\n    \"taxType\": \"<string>\",\n    \"taxTypeNote\": \"<string>\"\n  },\n  \"title\": \"<string>\",\n  \"introduction\": \"<string>\",\n  \"remark\": \"<string>\",\n  \"dueDate\": \"<dateTime>\",\n  \"shippingConditions\": {\n    \"shippingDate\": \"<dateTime>\",\n    \"shippingType\": \"<string>\"\n  },\n  \"paymentConditions\": {\n    \"paymentTermLabel\": \"<string>\",\n    \"paymentTermDuration\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"2023-06-27T09:51:52.153Z\",\n  \"status\": 1957,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e8dbc8b4-3ff0-4dbb-8797-a2c9b20ef7e5",
+              "name": "Rate limit of 2 requests per second exceeded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "invoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "finalize",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"organizationId\": \"<uuid>\",\n  \"version\": \"<integer>\",\n  \"language\": \"de\",\n  \"voucherDate\": \"<dateTime>\",\n  \"address\": {\n    \"contactId\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"street\": \"<string>\",\n    \"zip\": \"<string>\",\n    \"city\": \"<string>\",\n    \"countryCode\": \"<string>\"\n  },\n  \"lineItems\": [\n    {\n      \"id\": \"<uuid>\",\n      \"type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<number>\",\n      \"unitName\": \"<string>\",\n      \"unitPrice\": {\n        \"currency\": \"EUR\",\n        \"netAmount\": \"<number>\",\n        \"grossAmount\": \"<number>\",\n        \"taxRatePercentage\": \"<number>\"\n      },\n      \"discountPercentage\": \"<number>\",\n      \"lineItemAmount\": \"<number>\"\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<number>\",\n      \"unitName\": \"<string>\",\n      \"unitPrice\": {\n        \"currency\": \"EUR\",\n        \"netAmount\": \"<number>\",\n        \"grossAmount\": \"<number>\",\n        \"taxRatePercentage\": \"<number>\"\n      },\n      \"discountPercentage\": \"<number>\",\n      \"lineItemAmount\": \"<number>\"\n    }\n  ],\n  \"totalPrice\": {\n    \"currency\": \"EUR\",\n    \"totalNetAmount\": \"<number>\",\n    \"totalGrossAmount\": \"<number>\",\n    \"totalTaxAmount\": \"<number>\"\n  },\n  \"taxConditions\": {\n    \"taxType\": \"<string>\",\n    \"taxTypeNote\": \"<string>\"\n  },\n  \"title\": \"<string>\",\n  \"introduction\": \"<string>\",\n  \"remark\": \"<string>\",\n  \"dueDate\": \"<dateTime>\",\n  \"shippingConditions\": {\n    \"shippingDate\": \"<dateTime>\",\n    \"shippingType\": \"<string>\"\n  },\n  \"paymentConditions\": {\n    \"paymentTermLabel\": \"<string>\",\n    \"paymentTermDuration\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"2023-06-27T09:51:52.153Z\",\n  \"status\": 1957,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c0c6322e-6716-422f-9c89-4a4c519094b7",
+          "name": "Retrieve an invoice",
+          "request": {
+            "name": "Retrieve an invoice",
+            "description": {
+              "content": "Retrieves a single invoice by its UUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "invoices",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) The UUID of the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3a7a1c2d-f6d8-4a12-ba43-c9fc27a4eea8",
+              "name": "The requested invoice.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "invoices",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"7225fd8d-d31c-abed-6580-f1abbed4b523\",\n  \"organizationId\": \"<uuid>\",\n  \"version\": \"<integer>\",\n  \"language\": \"de\",\n  \"archived\": true,\n  \"voucherStatus\": \"string\",\n  \"voucherNumber\": \"string\",\n  \"voucherDate\": \"<dateTime>\",\n  \"address\": {\n    \"contactId\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"street\": \"<string>\",\n    \"zip\": \"<string>\",\n    \"city\": \"<string>\",\n    \"countryCode\": \"<string>\"\n  },\n  \"lineItems\": [\n    {\n      \"id\": \"<uuid>\",\n      \"type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<number>\",\n      \"unitName\": \"<string>\",\n      \"unitPrice\": {\n        \"currency\": \"EUR\",\n        \"netAmount\": \"<number>\",\n        \"grossAmount\": \"<number>\",\n        \"taxRatePercentage\": \"<number>\"\n      },\n      \"discountPercentage\": \"<number>\",\n      \"lineItemAmount\": \"<number>\"\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<number>\",\n      \"unitName\": \"<string>\",\n      \"unitPrice\": {\n        \"currency\": \"EUR\",\n        \"netAmount\": \"<number>\",\n        \"grossAmount\": \"<number>\",\n        \"taxRatePercentage\": \"<number>\"\n      },\n      \"discountPercentage\": \"<number>\",\n      \"lineItemAmount\": \"<number>\"\n    }\n  ],\n  \"totalPrice\": {\n    \"currency\": \"EUR\",\n    \"totalNetAmount\": \"<number>\",\n    \"totalGrossAmount\": \"<number>\",\n    \"totalTaxAmount\": \"<number>\"\n  },\n  \"taxConditions\": {\n    \"taxType\": \"<string>\",\n    \"taxTypeNote\": \"<string>\"\n  },\n  \"title\": \"<string>\",\n  \"introduction\": \"<string>\",\n  \"remark\": \"<string>\",\n  \"dueDate\": \"<dateTime>\",\n  \"shippingConditions\": {\n    \"shippingDate\": \"<dateTime>\",\n    \"shippingType\": \"<string>\"\n  },\n  \"paymentConditions\": {\n    \"paymentTermLabel\": \"<string>\",\n    \"paymentTermDuration\": \"<integer>\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b5766145-f56d-48f8-b354-2db9f5eb3fca",
+              "name": "Missing or invalid Bearer API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "invoices",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"2023-06-27T09:51:52.153Z\",\n  \"status\": 1957,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4efc64b3-fe26-4ce9-ae45-f7e7c3bc9720",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "invoices",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"2023-06-27T09:51:52.153Z\",\n  \"status\": 1957,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dfcac7aa-a6da-49e2-bbc5-561ab34c0fbe",
+          "name": "Request the invoice PDF",
+          "request": {
+            "name": "Request the invoice PDF",
+            "description": {
+              "content": "Triggers or retrieves the rendered PDF for a finalized invoice and returns a documentFileId used to download the file via the Files endpoint.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "invoices",
+                ":id",
+                "document"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) The UUID of the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0dcbca31-444a-4707-9205-65db2a93b7ed",
+              "name": "A reference to the rendered document file.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "invoices",
+                    ":id",
+                    "document"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"documentFileId\": \"51ae9114-fabb-f158-3341-eb5bcd25d328\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1989eab1-0096-48f7-8bb4-119df7d9916a",
+              "name": "Missing or invalid Bearer API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "invoices",
+                    ":id",
+                    "document"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"2023-06-27T09:51:52.153Z\",\n  \"status\": 1957,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b98d4eaa-104a-46a7-b18a-a3fe2087c50a",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "invoices",
+                    ":id",
+                    "document"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"2023-06-27T09:51:52.153Z\",\n  \"status\": 1957,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "073d20ef-56e8-4e9b-8fa4-d2ea989c10ce",
+              "name": "The document is not yet available (still a draft).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "invoices",
+                    ":id",
+                    "document"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.lexware.io/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "f4eb6e1d-6bc4-4554-875b-bb0e1e719dfe",
+    "name": "lexoffice (lexware Office) Public Contacts Invoices API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public REST API for lexoffice, the German cloud accounting and invoicing SaaS from Lexware (Haufe Group), rebranded to \"lexware Office\" in 2025. The API lets developers push and pull business data - contacts, invoices, quotations, order confirmations, delivery notes, credit notes, dunnings, bookkeeping vouchers, files, payments, and profile metadata - and subscribe to webhooks through event subscriptions. All requests are authenticated with a Bearer API key generated by the account owner at https://app.lexware.de/addons/public-api. The API is rate limited to 2 requests per second per client (HTTP 429 on exceed). The API gateway moved from api.lexoffice.io to api.lexware.io on 26 May 2025; the legacy host remained available through December 2025. This document is a representative, hand-authored subset grounded in the public documentation at https://developers.lexware.io/docs/ - it is not the vendor's own machine-readable specification.\n\nContact Support:\n Name: lexware Office Developers",
+      "type": "text/plain"
+    }
+  }
+}

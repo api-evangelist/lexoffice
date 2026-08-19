@@ -1,0 +1,362 @@
+{
+  "item": [
+    {
+      "id": "7159b206-cddd-4dde-8da4-39671427232a",
+      "name": "Payments",
+      "description": {
+        "content": "Payment status for a voucher and payment conditions.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a58d4f49-6041-4173-bca1-0f3128075130",
+          "name": "Retrieve payment status for a voucher",
+          "request": {
+            "name": "Retrieve payment status for a voucher",
+            "description": {
+              "content": "Returns the open amount, payment status, and recorded payment items for a given voucher (invoice, credit note, etc.).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "payments",
+                ":voucherId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "voucherId",
+                  "description": "(Required) The UUID of the voucher whose payment status is requested."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1c1c893a-3790-436c-b09c-6899d0480d30",
+              "name": "Payment status for the voucher.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":voucherId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "voucherId",
+                      "description": "(Required) The UUID of the voucher whose payment status is requested."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"openAmount\": 8088.158078582911,\n  \"currency\": \"EUR\",\n  \"paymentStatus\": \"open\",\n  \"voucherType\": \"string\",\n  \"voucherStatus\": \"string\",\n  \"paidDate\": \"1996-04-24T20:50:25.309Z\",\n  \"paymentItems\": [\n    {\n      \"amount\": 3613.2122889481666,\n      \"currency\": \"string\",\n      \"paymentItemType\": \"string\",\n      \"postingDate\": \"1970-02-02T06:23:48.915Z\"\n    },\n    {\n      \"amount\": 1120.1635474713057,\n      \"currency\": \"string\",\n      \"paymentItemType\": \"string\",\n      \"postingDate\": \"1993-07-28T20:37:45.003Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2efe3fc1-4b7c-4997-9657-d8cf3a01110c",
+              "name": "Missing or invalid Bearer API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":voucherId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "voucherId",
+                      "description": "(Required) The UUID of the voucher whose payment status is requested."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"1995-06-24T20:22:33.002Z\",\n  \"status\": 5194,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "416dcf82-8656-4f97-ae8c-e43a2b2dcb6b",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":voucherId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "voucherId",
+                      "description": "(Required) The UUID of the voucher whose payment status is requested."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"1978-04-23T06:14:09.876Z\",\n  \"status\": 1871,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0a0b7ad3-e888-486d-92c8-34daa845eb53",
+          "name": "List payment conditions",
+          "request": {
+            "name": "List payment conditions",
+            "description": {
+              "content": "Returns the payment conditions (terms and cash discounts) configured in the account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "payment-conditions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f2cb3d21-eab7-48f6-ab97-ec89a78e129c",
+              "name": "A list of payment conditions.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payment-conditions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"8c876702-bec3-31fd-dd4a-75f8a3c7600c\",\n    \"paymentTermLabel\": \"string\",\n    \"paymentTermDuration\": 6364,\n    \"paymentDiscountConditions\": {\n      \"discountPercentage\": 8880.28310733195,\n      \"discountRange\": 4316\n    },\n    \"organizationDefault\": true\n  },\n  {\n    \"id\": \"e4d09ff0-ad08-1dda-9eb5-a79b492a1efb\",\n    \"paymentTermLabel\": \"string\",\n    \"paymentTermDuration\": 8779,\n    \"paymentDiscountConditions\": {\n      \"discountPercentage\": 4102.421231186996,\n      \"discountRange\": 3046\n    },\n    \"organizationDefault\": true\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4159735d-6cc3-41fc-8cce-e14cb0c870ca",
+              "name": "Missing or invalid Bearer API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payment-conditions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"1978-04-23T06:14:09.876Z\",\n  \"status\": 1871,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.lexware.io/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "94717936-8fe4-4c5f-88c0-e7befcfedfdf",
+    "name": "lexoffice (lexware Office) Public Contacts Payments API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public REST API for lexoffice, the German cloud accounting and invoicing SaaS from Lexware (Haufe Group), rebranded to \"lexware Office\" in 2025. The API lets developers push and pull business data - contacts, invoices, quotations, order confirmations, delivery notes, credit notes, dunnings, bookkeeping vouchers, files, payments, and profile metadata - and subscribe to webhooks through event subscriptions. All requests are authenticated with a Bearer API key generated by the account owner at https://app.lexware.de/addons/public-api. The API is rate limited to 2 requests per second per client (HTTP 429 on exceed). The API gateway moved from api.lexoffice.io to api.lexware.io on 26 May 2025; the legacy host remained available through December 2025. This document is a representative, hand-authored subset grounded in the public documentation at https://developers.lexware.io/docs/ - it is not the vendor's own machine-readable specification.\n\nContact Support:\n Name: lexware Office Developers",
+      "type": "text/plain"
+    }
+  }
+}

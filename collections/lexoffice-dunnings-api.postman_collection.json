@@ -1,0 +1,241 @@
+{
+  "item": [
+    {
+      "id": "0fe8b293-0f5c-4bae-b28c-b99f5d94dd57",
+      "name": "Dunnings",
+      "description": {
+        "content": "Payment reminder documents.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3dc8d4a3-f972-4543-ab7f-e5c7767bf68e",
+          "name": "Retrieve a dunning",
+          "request": {
+            "name": "Retrieve a dunning",
+            "description": {
+              "content": "Retrieves a single dunning (payment reminder) by its UUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dunnings",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) The UUID of the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2f40de51-2acd-4f6c-a0cd-a93b00dee75c",
+              "name": "The requested dunning.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dunnings",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"8d57e807-4b56-3637-2365-9bac2124eef3\",\n  \"organizationId\": \"a0d25695-970c-09b7-ab44-e57bf135ffbd\",\n  \"version\": 9859,\n  \"language\": \"de\",\n  \"archived\": false,\n  \"voucherStatus\": \"string\",\n  \"voucherNumber\": \"string\",\n  \"voucherDate\": \"1997-11-09T12:30:50.584Z\",\n  \"address\": {\n    \"contactId\": \"d2dba48c-0d47-fbc4-8c40-507d35b4d342\",\n    \"name\": \"string\",\n    \"street\": \"string\",\n    \"zip\": \"string\",\n    \"city\": \"string\",\n    \"countryCode\": \"string\"\n  },\n  \"lineItems\": [\n    {\n      \"id\": \"87d553d2-98c9-6988-81ea-380398e6410e\",\n      \"type\": \"custom\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"quantity\": 6058.6502618734,\n      \"unitName\": \"string\",\n      \"unitPrice\": {\n        \"currency\": \"EUR\",\n        \"netAmount\": 2195.212566347272,\n        \"grossAmount\": 6150.366803633502,\n        \"taxRatePercentage\": 5419.558628671529\n      },\n      \"discountPercentage\": 5645.248145062661,\n      \"lineItemAmount\": 553.324159475047\n    },\n    {\n      \"id\": \"ad51717b-3a44-1ff5-1135-07bf9cc5460b\",\n      \"type\": \"material\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"quantity\": 9871.660118027623,\n      \"unitName\": \"string\",\n      \"unitPrice\": {\n        \"currency\": \"EUR\",\n        \"netAmount\": 1450.4586495901283,\n        \"grossAmount\": 3077.3234368349044,\n        \"taxRatePercentage\": 7733.035728134423\n      },\n      \"discountPercentage\": 7462.574838887975,\n      \"lineItemAmount\": 3962.661295168889\n    }\n  ],\n  \"totalPrice\": {\n    \"currency\": \"EUR\",\n    \"totalNetAmount\": 6278.549065991442,\n    \"totalGrossAmount\": 1073.2773672472351,\n    \"totalTaxAmount\": 9802.157714545645\n  },\n  \"taxConditions\": {\n    \"taxType\": \"externalService13b\",\n    \"taxTypeNote\": \"string\"\n  },\n  \"title\": \"string\",\n  \"introduction\": \"string\",\n  \"remark\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5c761e29-3eaf-4b7f-94d3-c0cc361c0a1c",
+              "name": "Missing or invalid Bearer API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dunnings",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"2005-06-26T17:28:47.123Z\",\n  \"status\": 7030,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4ca0cf83-f159-4fa0-bedc-d2cd0a2cc294",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dunnings",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"1949-10-13T03:38:59.510Z\",\n  \"status\": 3401,\n  \"error\": \"string\",\n  \"path\": \"string\",\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"violation\": \"string\",\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.lexware.io/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "19ff8eae-98b2-4e4b-98e8-0b6f377c4b61",
+    "name": "lexoffice (lexware Office) Public Contacts Dunnings API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public REST API for lexoffice, the German cloud accounting and invoicing SaaS from Lexware (Haufe Group), rebranded to \"lexware Office\" in 2025. The API lets developers push and pull business data - contacts, invoices, quotations, order confirmations, delivery notes, credit notes, dunnings, bookkeeping vouchers, files, payments, and profile metadata - and subscribe to webhooks through event subscriptions. All requests are authenticated with a Bearer API key generated by the account owner at https://app.lexware.de/addons/public-api. The API is rate limited to 2 requests per second per client (HTTP 429 on exceed). The API gateway moved from api.lexoffice.io to api.lexware.io on 26 May 2025; the legacy host remained available through December 2025. This document is a representative, hand-authored subset grounded in the public documentation at https://developers.lexware.io/docs/ - it is not the vendor's own machine-readable specification.\n\nContact Support:\n Name: lexware Office Developers",
+      "type": "text/plain"
+    }
+  }
+}

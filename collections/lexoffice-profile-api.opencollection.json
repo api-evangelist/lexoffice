@@ -1,0 +1,57 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "lexoffice (lexware Office) Public Contacts Profile API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Profile",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve the account profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.lexware.io/v1/profile"
+          },
+          "docs": "Returns the connected organization's profile and connection metadata."
+        },
+        {
+          "info": {
+            "name": "List countries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.lexware.io/v1/countries"
+          },
+          "docs": "Returns the list of countries supported by lexoffice with tax classification."
+        },
+        {
+          "info": {
+            "name": "List posting categories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.lexware.io/v1/posting-categories"
+          },
+          "docs": "Returns the posting categories used to classify voucher items for bookkeeping."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
