@@ -32,6 +32,16 @@ tags:
 - Germany
 - Vouchers
 - Contacts
+- Software-as-a-Service
+- Financial Software
+tags_raw:
+- Accounting
+- Invoicing
+- Bookkeeping
+- Finance
+- Germany
+- Vouchers
+- Contacts
 - SaaS
 - Financial Software
 created: '2026-07-12'
@@ -272,6 +282,8 @@ apis:
   humanURL: https://developers.lexware.io/docs/#contacts-endpoint
   baseURL: https://api.lexware.io/v1
   tags:
+  - File
+  tags_raw:
   - Files
   properties:
   - type: OpenAPI
