@@ -10,6 +10,18 @@ description: lexoffice (rebranded to "lexware Office" in 2025) is a German cloud
   webhooks via event subscriptions. Authentication is a self-serve Bearer API key.
   The API gateway moved from api.lexoffice.io to api.lexware.io on 26 May 2025 as
   part of the rebrand; the legacy host remained available through December 2025.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: paid
   onboarding: self-serve
