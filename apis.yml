@@ -449,6 +449,8 @@ apis:
   humanURL: https://developers.lexware.io/docs/#contacts-endpoint
   baseURL: https://api.lexware.io/v1
   tags:
+  - Profiles
+  tags_raw:
   - Profile
   properties:
   - type: OpenAPI
