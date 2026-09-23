@@ -1,20 +1,7 @@
 {
   "provider": "lexoffice",
   "sources": [
-    "lexoffice-contacts-api-openapi.yml",
-    "lexoffice-credit-notes-api-openapi.yml",
-    "lexoffice-delivery-notes-api-openapi.yml",
-    "lexoffice-down-payment-invoices-api-openapi.yml",
-    "lexoffice-dunnings-api-openapi.yml",
-    "lexoffice-event-subscriptions-api-openapi.yml",
-    "lexoffice-files-api-openapi.yml",
-    "lexoffice-invoices-api-openapi.yml",
-    "lexoffice-order-confirmations-api-openapi.yml",
-    "lexoffice-payments-api-openapi.yml",
-    "lexoffice-profile-api-openapi.yml",
-    "lexoffice-quotations-api-openapi.yml",
-    "lexoffice-recurring-templates-api-openapi.yml",
-    "lexoffice-vouchers-api-openapi.yml"
+    "_original/lexoffice-openapi.yml"
   ],
   "outputs": [
     "lexoffice-contacts-api-openapi.yml",
@@ -35,6 +22,25 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "lexoffice-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "lexoffice-contacts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "lexoffice-credit-notes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "lexoffice-delivery-notes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "lexoffice-down-payment-invoices-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "lexoffice-dunnings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "lexoffice-event-subscriptions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "lexoffice-files-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "lexoffice-invoices-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "lexoffice-order-confirmations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "lexoffice-payments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "lexoffice-profile-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "lexoffice-quotations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "lexoffice-recurring-templates-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "lexoffice-vouchers-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
