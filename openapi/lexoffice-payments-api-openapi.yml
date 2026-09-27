@@ -66,31 +66,6 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
-    Error:
-      type: object
-      properties:
-        timestamp:
-          type: string
-          format: date-time
-        status:
-          type: integer
-        error:
-          type: string
-        path:
-          type: string
-        message:
-          type: string
-        details:
-          type: array
-          items:
-            type: object
-            properties:
-              violation:
-                type: string
-              field:
-                type: string
-              message:
-                type: string
     Payments:
       type: object
       properties:
@@ -127,6 +102,31 @@ components:
               postingDate:
                 type: string
                 format: date-time
+    Error:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        status:
+          type: integer
+        error:
+          type: string
+        path:
+          type: string
+        message:
+          type: string
+        details:
+          type: array
+          items:
+            type: object
+            properties:
+              violation:
+                type: string
+              field:
+                type: string
+              message:
+                type: string
     PaymentCondition:
       type: object
       properties:
@@ -147,14 +147,14 @@ components:
         organizationDefault:
           type: boolean
   responses:
-    NotFound:
-      description: The requested resource was not found.
+    Unauthorized:
+      description: Missing or invalid Bearer API key.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Missing or invalid Bearer API key.
+    NotFound:
+      description: The requested resource was not found.
       content:
         application/json:
           schema:

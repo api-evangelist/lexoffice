@@ -74,6 +74,41 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
+    Country:
+      type: object
+      properties:
+        countryCode:
+          type: string
+          example: DE
+        countryNameEN:
+          type: string
+        countryNameDE:
+          type: string
+        taxClassification:
+          type: string
+          enum:
+          - de
+          - intraCommunity
+          - thirdPartyCountry
+    PostingCategory:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        type:
+          type: string
+          enum:
+          - income
+          - outgo
+        contactRequired:
+          type: boolean
+        splitAllowed:
+          type: boolean
+        groupName:
+          type: string
     Error:
       type: object
       properties:
@@ -127,41 +162,6 @@ components:
           type: string
         smallBusiness:
           type: boolean
-    Country:
-      type: object
-      properties:
-        countryCode:
-          type: string
-          example: DE
-        countryNameEN:
-          type: string
-        countryNameDE:
-          type: string
-        taxClassification:
-          type: string
-          enum:
-          - de
-          - intraCommunity
-          - thirdPartyCountry
-    PostingCategory:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        name:
-          type: string
-        type:
-          type: string
-          enum:
-          - income
-          - outgo
-        contactRequired:
-          type: boolean
-        splitAllowed:
-          type: boolean
-        groupName:
-          type: string
   responses:
     Unauthorized:
       description: Missing or invalid Bearer API key.

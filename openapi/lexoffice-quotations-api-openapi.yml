@@ -70,6 +70,76 @@ paths:
           $ref: '#/components/responses/NotFound'
 components:
   schemas:
+    ResourceReference:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        resourceUri:
+          type: string
+          format: uri
+        createdDate:
+          type: string
+          format: date-time
+        updatedDate:
+          type: string
+          format: date-time
+        version:
+          type: integer
+    TaxConditions:
+      type: object
+      properties:
+        taxType:
+          type: string
+          enum:
+          - net
+          - gross
+          - vatfree
+          - intraCommunitySupply
+          - constructionService13b
+          - externalService13b
+          - thirdPartyCountryService
+          - thirdPartyCountryDelivery
+        taxTypeNote:
+          type: string
+    TotalPrice:
+      type: object
+      properties:
+        currency:
+          type: string
+          example: EUR
+        totalNetAmount:
+          type: number
+        totalGrossAmount:
+          type: number
+        totalTaxAmount:
+          type: number
+    Error:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        status:
+          type: integer
+        error:
+          type: string
+        path:
+          type: string
+        message:
+          type: string
+        details:
+          type: array
+          items:
+            type: object
+            properties:
+              violation:
+                type: string
+              field:
+                type: string
+              message:
+                type: string
     SalesDocument:
       type: object
       description: Shared shape for quotation, order confirmation, delivery note, credit note, and dunning documents.
@@ -128,31 +198,6 @@ components:
           type: string
         remark:
           type: string
-    Error:
-      type: object
-      properties:
-        timestamp:
-          type: string
-          format: date-time
-        status:
-          type: integer
-        error:
-          type: string
-        path:
-          type: string
-        message:
-          type: string
-        details:
-          type: array
-          items:
-            type: object
-            properties:
-              violation:
-                type: string
-              field:
-                type: string
-              message:
-                type: string
     LineItem:
       type: object
       properties:
@@ -190,60 +235,15 @@ components:
           type: number
         lineItemAmount:
           type: number
-    ResourceReference:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        resourceUri:
-          type: string
-          format: uri
-        createdDate:
-          type: string
-          format: date-time
-        updatedDate:
-          type: string
-          format: date-time
-        version:
-          type: integer
-    TotalPrice:
-      type: object
-      properties:
-        currency:
-          type: string
-          example: EUR
-        totalNetAmount:
-          type: number
-        totalGrossAmount:
-          type: number
-        totalTaxAmount:
-          type: number
-    TaxConditions:
-      type: object
-      properties:
-        taxType:
-          type: string
-          enum:
-          - net
-          - gross
-          - vatfree
-          - intraCommunitySupply
-          - constructionService13b
-          - externalService13b
-          - thirdPartyCountryService
-          - thirdPartyCountryDelivery
-        taxTypeNote:
-          type: string
   responses:
-    NotFound:
-      description: The requested resource was not found.
+    Unauthorized:
+      description: Missing or invalid Bearer API key.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Missing or invalid Bearer API key.
+    NotFound:
+      description: The requested resource was not found.
       content:
         application/json:
           schema:
