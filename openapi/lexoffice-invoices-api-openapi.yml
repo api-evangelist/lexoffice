@@ -97,30 +97,69 @@ paths:
         '406':
           description: The document is not yet available (still a draft).
 components:
+  responses:
+    BadRequest:
+      description: The request payload failed validation.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: The requested resource was not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Missing or invalid Bearer API key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    TooManyRequests:
+      description: Rate limit of 2 requests per second exceeded.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   schemas:
-    ResourceReference:
+    LineItem:
       type: object
       properties:
         id:
           type: string
           format: uuid
-        resourceUri:
+        type:
           type: string
-          format: uri
-        createdDate:
+          enum:
+          - custom
+          - material
+          - service
+          - text
+        name:
           type: string
-          format: date-time
-        updatedDate:
+        description:
           type: string
-          format: date-time
-        version:
-          type: integer
-    DocumentFileReference:
-      type: object
-      properties:
-        documentFileId:
+        quantity:
+          type: number
+        unitName:
           type: string
-          format: uuid
+        unitPrice:
+          type: object
+          properties:
+            currency:
+              type: string
+              example: EUR
+            netAmount:
+              type: number
+            grossAmount:
+              type: number
+            taxRatePercentage:
+              type: number
+        discountPercentage:
+          type: number
+        lineItemAmount:
+          type: number
     TaxConditions:
       type: object
       properties:
@@ -137,43 +176,29 @@ components:
           - thirdPartyCountryDelivery
         taxTypeNote:
           type: string
-    TotalPrice:
-      type: object
-      properties:
-        currency:
-          type: string
-          example: EUR
-        totalNetAmount:
-          type: number
-        totalGrossAmount:
-          type: number
-        totalTaxAmount:
-          type: number
-    Error:
-      type: object
-      properties:
-        timestamp:
-          type: string
-          format: date-time
-        status:
-          type: integer
-        error:
-          type: string
-        path:
-          type: string
-        message:
-          type: string
-        details:
-          type: array
-          items:
+    Invoice:
+      allOf:
+      - $ref: '#/components/schemas/SalesDocument'
+      - type: object
+        properties:
+          dueDate:
+            type: string
+            format: date-time
+          shippingConditions:
             type: object
             properties:
-              violation:
+              shippingDate:
                 type: string
-              field:
+                format: date-time
+              shippingType:
                 type: string
-              message:
+          paymentConditions:
+            type: object
+            properties:
+              paymentTermLabel:
                 type: string
+              paymentTermDuration:
+                type: integer
     SalesDocument:
       type: object
       description: Shared shape for quotation, order confirmation, delivery note, credit note, and dunning documents.
@@ -232,91 +257,66 @@ components:
           type: string
         remark:
           type: string
-    LineItem:
+    DocumentFileReference:
+      type: object
+      properties:
+        documentFileId:
+          type: string
+          format: uuid
+    Error:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        status:
+          type: integer
+        error:
+          type: string
+        path:
+          type: string
+        message:
+          type: string
+        details:
+          type: array
+          items:
+            type: object
+            properties:
+              violation:
+                type: string
+              field:
+                type: string
+              message:
+                type: string
+    TotalPrice:
+      type: object
+      properties:
+        currency:
+          type: string
+          example: EUR
+        totalNetAmount:
+          type: number
+        totalGrossAmount:
+          type: number
+        totalTaxAmount:
+          type: number
+    ResourceReference:
       type: object
       properties:
         id:
           type: string
           format: uuid
-        type:
+        resourceUri:
           type: string
-          enum:
-          - custom
-          - material
-          - service
-          - text
-        name:
+          format: uri
+        createdDate:
           type: string
-        description:
+          format: date-time
+        updatedDate:
           type: string
-        quantity:
-          type: number
-        unitName:
-          type: string
-        unitPrice:
-          type: object
-          properties:
-            currency:
-              type: string
-              example: EUR
-            netAmount:
-              type: number
-            grossAmount:
-              type: number
-            taxRatePercentage:
-              type: number
-        discountPercentage:
-          type: number
-        lineItemAmount:
-          type: number
-    Invoice:
-      allOf:
-      - $ref: '#/components/schemas/SalesDocument'
-      - type: object
-        properties:
-          dueDate:
-            type: string
-            format: date-time
-          shippingConditions:
-            type: object
-            properties:
-              shippingDate:
-                type: string
-                format: date-time
-              shippingType:
-                type: string
-          paymentConditions:
-            type: object
-            properties:
-              paymentTermLabel:
-                type: string
-              paymentTermDuration:
-                type: integer
-  responses:
-    TooManyRequests:
-      description: Rate limit of 2 requests per second exceeded.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    BadRequest:
-      description: The request payload failed validation.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Missing or invalid Bearer API key.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    NotFound:
-      description: The requested resource was not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
+          format: date-time
+        version:
+          type: integer
   parameters:
     Id:
       name: id

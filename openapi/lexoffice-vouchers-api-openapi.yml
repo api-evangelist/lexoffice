@@ -145,90 +145,6 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
 components:
   schemas:
-    ResourceReference:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        resourceUri:
-          type: string
-          format: uri
-        createdDate:
-          type: string
-          format: date-time
-        updatedDate:
-          type: string
-          format: date-time
-        version:
-          type: integer
-    Error:
-      type: object
-      properties:
-        timestamp:
-          type: string
-          format: date-time
-        status:
-          type: integer
-        error:
-          type: string
-        path:
-          type: string
-        message:
-          type: string
-        details:
-          type: array
-          items:
-            type: object
-            properties:
-              violation:
-                type: string
-              field:
-                type: string
-              message:
-                type: string
-    VoucherListPage:
-      type: object
-      properties:
-        content:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                type: string
-                format: uuid
-              voucherType:
-                type: string
-              voucherStatus:
-                type: string
-              voucherNumber:
-                type: string
-              voucherDate:
-                type: string
-                format: date-time
-              dueDate:
-                type: string
-                format: date-time
-              contactName:
-                type: string
-              totalAmount:
-                type: number
-              openAmount:
-                type: number
-              currency:
-                type: string
-                example: EUR
-              archived:
-                type: boolean
-        totalPages:
-          type: integer
-        totalElements:
-          type: integer
-        size:
-          type: integer
-        number:
-          type: integer
     Voucher:
       type: object
       description: A bookkeeping voucher for preliminary accounting.
@@ -305,15 +221,99 @@ components:
             format: uuid
         version:
           type: integer
+    VoucherListPage:
+      type: object
+      properties:
+        content:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                format: uuid
+              voucherType:
+                type: string
+              voucherStatus:
+                type: string
+              voucherNumber:
+                type: string
+              voucherDate:
+                type: string
+                format: date-time
+              dueDate:
+                type: string
+                format: date-time
+              contactName:
+                type: string
+              totalAmount:
+                type: number
+              openAmount:
+                type: number
+              currency:
+                type: string
+                example: EUR
+              archived:
+                type: boolean
+        totalPages:
+          type: integer
+        totalElements:
+          type: integer
+        size:
+          type: integer
+        number:
+          type: integer
+    Error:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        status:
+          type: integer
+        error:
+          type: string
+        path:
+          type: string
+        message:
+          type: string
+        details:
+          type: array
+          items:
+            type: object
+            properties:
+              violation:
+                type: string
+              field:
+                type: string
+              message:
+                type: string
+    ResourceReference:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        resourceUri:
+          type: string
+          format: uri
+        createdDate:
+          type: string
+          format: date-time
+        updatedDate:
+          type: string
+          format: date-time
+        version:
+          type: integer
   responses:
-    TooManyRequests:
-      description: Rate limit of 2 requests per second exceeded.
+    BadRequest:
+      description: The request payload failed validation.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    BadRequest:
-      description: The request payload failed validation.
+    NotFound:
+      description: The requested resource was not found.
       content:
         application/json:
           schema:
@@ -324,8 +324,8 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    NotFound:
-      description: The requested resource was not found.
+    TooManyRequests:
+      description: Rate limit of 2 requests per second exceeded.
       content:
         application/json:
           schema:

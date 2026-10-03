@@ -135,38 +135,32 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
+  responses:
+    BadRequest:
+      description: The request payload failed validation.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: The requested resource was not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Missing or invalid Bearer API key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    TooManyRequests:
+      description: Rate limit of 2 requests per second exceeded.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   schemas:
-    ResourceReference:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        resourceUri:
-          type: string
-          format: uri
-        createdDate:
-          type: string
-          format: date-time
-        updatedDate:
-          type: string
-          format: date-time
-        version:
-          type: integer
-    Address:
-      type: object
-      properties:
-        supplement:
-          type: string
-        street:
-          type: string
-        zip:
-          type: string
-        city:
-          type: string
-        countryCode:
-          type: string
-          example: DE
     Contact:
       type: object
       properties:
@@ -249,6 +243,21 @@ components:
         archived:
           type: boolean
           readOnly: true
+    ContactPage:
+      type: object
+      properties:
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/Contact'
+        totalPages:
+          type: integer
+        totalElements:
+          type: integer
+        size:
+          type: integer
+        number:
+          type: integer
     Error:
       type: object
       properties:
@@ -274,46 +283,37 @@ components:
                 type: string
               message:
                 type: string
-    ContactPage:
+    Address:
       type: object
       properties:
-        content:
-          type: array
-          items:
-            $ref: '#/components/schemas/Contact'
-        totalPages:
+        supplement:
+          type: string
+        street:
+          type: string
+        zip:
+          type: string
+        city:
+          type: string
+        countryCode:
+          type: string
+          example: DE
+    ResourceReference:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        resourceUri:
+          type: string
+          format: uri
+        createdDate:
+          type: string
+          format: date-time
+        updatedDate:
+          type: string
+          format: date-time
+        version:
           type: integer
-        totalElements:
-          type: integer
-        size:
-          type: integer
-        number:
-          type: integer
-  responses:
-    TooManyRequests:
-      description: Rate limit of 2 requests per second exceeded.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    BadRequest:
-      description: The request payload failed validation.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Missing or invalid Bearer API key.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    NotFound:
-      description: The requested resource was not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   parameters:
     Page:
       name: page

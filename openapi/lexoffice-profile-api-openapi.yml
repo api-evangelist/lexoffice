@@ -74,22 +74,34 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
-    Country:
+    Profile:
       type: object
       properties:
-        countryCode:
+        organizationId:
           type: string
-          example: DE
-        countryNameEN:
+          format: uuid
+        companyName:
           type: string
-        countryNameDE:
+        created:
+          type: object
+          properties:
+            userId:
+              type: string
+              format: uuid
+            userName:
+              type: string
+            userEmail:
+              type: string
+            date:
+              type: string
+              format: date-time
+        connectionId:
           type: string
-        taxClassification:
+          format: uuid
+        taxType:
           type: string
-          enum:
-          - de
-          - intraCommunity
-          - thirdPartyCountry
+        smallBusiness:
+          type: boolean
     PostingCategory:
       type: object
       properties:
@@ -134,34 +146,22 @@ components:
                 type: string
               message:
                 type: string
-    Profile:
+    Country:
       type: object
       properties:
-        organizationId:
+        countryCode:
           type: string
-          format: uuid
-        companyName:
+          example: DE
+        countryNameEN:
           type: string
-        created:
-          type: object
-          properties:
-            userId:
-              type: string
-              format: uuid
-            userName:
-              type: string
-            userEmail:
-              type: string
-            date:
-              type: string
-              format: date-time
-        connectionId:
+        countryNameDE:
           type: string
-          format: uuid
-        taxType:
+        taxClassification:
           type: string
-        smallBusiness:
-          type: boolean
+          enum:
+          - de
+          - intraCommunity
+          - thirdPartyCountry
   responses:
     Unauthorized:
       description: Missing or invalid Bearer API key.
