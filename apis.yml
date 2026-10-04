@@ -598,6 +598,9 @@ apis:
   - type: APIReference
     url: https://developers.lexware.io/docs/#profile-endpoint
 common:
+- type: CapabilityMap
+  url: capabilities/lexoffice-capability-edges.yml
+  name: lexoffice Business Capability Map
 - type: AgenticAccess
   url: agentic-access/lexoffice-agentic-access.yml
 - type: DomainSecurity

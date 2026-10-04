@@ -1,0 +1,87 @@
+slug: lexoffice
+provider: lexoffice
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 7
+edges:
+- tag: Invoices
+  spec_file: lexoffice-invoices-api-openapi.yml
+  capability_id: BC-200.30
+  capability_id_l1: BC-200
+  capability_name: Accounts Receivable Management
+  confidence: 0.85
+  evidence: POST /invoices createInvoice 'Create an invoice'; GET /invoices/{id}/document 'Request the
+    invoice PDF'
+  reason: Creation and retrieval of customer invoices including PDF rendering — core customer invoicing
+    / accounts receivable in an accounting SaaS.
+- tag: Credit Notes
+  spec_file: lexoffice-credit-notes-api-openapi.yml
+  capability_id: BC-200.30
+  capability_id_l1: BC-200
+  capability_name: Accounts Receivable Management
+  confidence: 0.78
+  evidence: POST /credit-notes createCreditNote 'Create a credit note'; schemas SalesDocument, LineItem,
+    TaxConditions, TotalPrice
+  reason: Credit notes are customer-facing sales/billing documents that adjust receivables, created as
+    SalesDocument objects in a cloud accounting product — accounts receivable / customer invoicing.
+- tag: Down Payment Invoices
+  spec_file: lexoffice-down-payment-invoices-api-openapi.yml
+  capability_id: BC-200.30
+  capability_id_l1: BC-200
+  capability_name: Accounts Receivable Management
+  confidence: 0.78
+  evidence: GET /down-payment-invoices/{id} getDownPaymentInvoice 'Retrieve a down payment invoice'; schemas
+    Invoice, TaxConditions, TotalPrice
+  reason: Retrieval of customer down-payment invoices — customer invoicing documents within accounts receivable
+    accounting.
+- tag: Vouchers
+  spec_file: lexoffice-vouchers-api-openapi.yml
+  capability_id: BC-200.10
+  capability_id_l1: BC-200
+  capability_name: General Ledger Management
+  confidence: 0.78
+  evidence: POST /vouchers  createVoucher  Create a bookkeeping voucher
+  reason: CRUD over bookkeeping vouchers (Belege) is core general-ledger bookkeeping entry management
+    for this accounting SaaS; schema 'Voucher' and 'voucherlist' search confirm accounting records rather
+    than any other reading of 'voucher' (e.g. promotional voucher).
+- tag: Dunnings
+  spec_file: lexoffice-dunnings-api-openapi.yml
+  capability_id: BC-200.30
+  capability_id_l1: BC-200
+  capability_name: Accounts Receivable Management
+  confidence: 0.75
+  evidence: GET /dunnings/{id} getDunning 'Retrieve a dunning'; schemas SalesDocument, TotalPrice
+  reason: Dunnings are payment-reminder documents issued to customers for overdue invoices, i.e. receivables
+    collections in a bookkeeping product.
+- tag: Event Subscriptions
+  spec_file: lexoffice-event-subscriptions-api-openapi.yml
+  capability_id: BC-4270.80
+  capability_id_l1: BC-4270
+  capability_name: Webhook & Event Subscription Management
+  confidence: 0.72
+  evidence: 'POST /event-subscriptions createEventSubscription ''Create an event subscription''; DELETE
+    /event-subscriptions/{id}; vendor: ''subscribe to webhooks via event sub...'''
+  reason: Lifecycle management of outbound webhook/event subscriptions exposed to integrating developers,
+    which the frame models explicitly as Webhook & Event Subscription Management. Otherwise this would
+    be plumbing.
+- tag: Quotations
+  spec_file: lexoffice-quotations-api-openapi.yml
+  capability_id: BC-410.40
+  capability_id_l1: BC-410
+  capability_name: Quote & Configuration Management
+  confidence: 0.72
+  evidence: 'POST /quotations  createQuotation  Create a quotation; schemas: LineItem, TaxConditions,
+    SalesDocument, TotalPrice'
+  reason: Operations create and retrieve sales quotations with line items, tax conditions and total price
+    — a quote document in the lead-to-order flow, i.e. Quote & Configuration Management. Some ambiguity
+    since the vendor is an accounting SaaS and quotations also feed receivables, but the artefact itself
+    is a sales quote.
