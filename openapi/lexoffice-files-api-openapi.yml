@@ -91,6 +91,23 @@ components:
           schema:
             $ref: '#/components/schemas/Error'
   schemas:
+    ResourceReference:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        resourceUri:
+          type: string
+          format: uri
+        createdDate:
+          type: string
+          format: date-time
+        updatedDate:
+          type: string
+          format: date-time
+        version:
+          type: integer
     Error:
       type: object
       properties:
@@ -116,23 +133,6 @@ components:
                 type: string
               message:
                 type: string
-    ResourceReference:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        resourceUri:
-          type: string
-          format: uri
-        createdDate:
-          type: string
-          format: date-time
-        updatedDate:
-          type: string
-          format: date-time
-        version:
-          type: integer
   parameters:
     Id:
       name: id

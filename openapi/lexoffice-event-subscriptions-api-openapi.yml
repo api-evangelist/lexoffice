@@ -96,12 +96,6 @@ paths:
           $ref: '#/components/responses/NotFound'
 components:
   responses:
-    BadRequest:
-      description: The request payload failed validation.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
     NotFound:
       description: The requested resource was not found.
       content:
@@ -114,21 +108,13 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: The request payload failed validation.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   schemas:
-    EventSubscriptionInput:
-      type: object
-      required:
-      - eventType
-      - callbackUrl
-      properties:
-        eventType:
-          type: string
-          description: The event to subscribe to, e.g. contact.created, contact.changed, invoice.created, invoice.status.changed, voucher.created.
-          example: invoice.created
-        callbackUrl:
-          type: string
-          format: uri
-          description: HTTPS URL that lexoffice POSTs the webhook payload to.
     EventSubscription:
       allOf:
       - $ref: '#/components/schemas/EventSubscriptionInput'
@@ -143,6 +129,20 @@ components:
           createdDate:
             type: string
             format: date-time
+    EventSubscriptionInput:
+      type: object
+      required:
+      - eventType
+      - callbackUrl
+      properties:
+        eventType:
+          type: string
+          description: The event to subscribe to, e.g. contact.created, contact.changed, invoice.created, invoice.status.changed, voucher.created.
+          example: invoice.created
+        callbackUrl:
+          type: string
+          format: uri
+          description: HTTPS URL that lexoffice POSTs the webhook payload to.
     Error:
       type: object
       properties:
