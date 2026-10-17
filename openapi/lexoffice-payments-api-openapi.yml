@@ -65,20 +65,26 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
-  responses:
-    NotFound:
-      description: The requested resource was not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Missing or invalid Bearer API key.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   schemas:
+    PaymentCondition:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        paymentTermLabel:
+          type: string
+        paymentTermDuration:
+          type: integer
+        paymentDiscountConditions:
+          type: object
+          properties:
+            discountPercentage:
+              type: number
+            discountRange:
+              type: integer
+        organizationDefault:
+          type: boolean
     Error:
       type: object
       properties:
@@ -140,25 +146,19 @@ components:
               postingDate:
                 type: string
                 format: date-time
-    PaymentCondition:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        paymentTermLabel:
-          type: string
-        paymentTermDuration:
-          type: integer
-        paymentDiscountConditions:
-          type: object
-          properties:
-            discountPercentage:
-              type: number
-            discountRange:
-              type: integer
-        organizationDefault:
-          type: boolean
+  responses:
+    Unauthorized:
+      description: Missing or invalid Bearer API key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: The requested resource was not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   securitySchemes:
     bearerAuth:
       type: http

@@ -77,37 +77,16 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
-  responses:
-    NotFound:
-      description: The requested resource was not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Missing or invalid Bearer API key.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      description: The UUID of the resource.
+      schema:
+        type: string
+        format: uuid
   schemas:
-    ResourceReference:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        resourceUri:
-          type: string
-          format: uri
-        createdDate:
-          type: string
-          format: date-time
-        updatedDate:
-          type: string
-          format: date-time
-        version:
-          type: integer
     Error:
       type: object
       properties:
@@ -133,15 +112,36 @@ components:
                 type: string
               message:
                 type: string
-  parameters:
-    Id:
-      name: id
-      in: path
-      required: true
-      description: The UUID of the resource.
-      schema:
-        type: string
-        format: uuid
+    ResourceReference:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        resourceUri:
+          type: string
+          format: uri
+        createdDate:
+          type: string
+          format: date-time
+        updatedDate:
+          type: string
+          format: date-time
+        version:
+          type: integer
+  responses:
+    Unauthorized:
+      description: Missing or invalid Bearer API key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: The requested resource was not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   securitySchemes:
     bearerAuth:
       type: http

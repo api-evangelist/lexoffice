@@ -96,8 +96,8 @@ paths:
           $ref: '#/components/responses/NotFound'
 components:
   responses:
-    NotFound:
-      description: The requested resource was not found.
+    BadRequest:
+      description: The request payload failed validation.
       content:
         application/json:
           schema:
@@ -108,27 +108,13 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    BadRequest:
-      description: The request payload failed validation.
+    NotFound:
+      description: The requested resource was not found.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
   schemas:
-    EventSubscription:
-      allOf:
-      - $ref: '#/components/schemas/EventSubscriptionInput'
-      - type: object
-        properties:
-          subscriptionId:
-            type: string
-            format: uuid
-          organizationId:
-            type: string
-            format: uuid
-          createdDate:
-            type: string
-            format: date-time
     EventSubscriptionInput:
       type: object
       required:
@@ -143,6 +129,20 @@ components:
           type: string
           format: uri
           description: HTTPS URL that lexoffice POSTs the webhook payload to.
+    EventSubscription:
+      allOf:
+      - $ref: '#/components/schemas/EventSubscriptionInput'
+      - type: object
+        properties:
+          subscriptionId:
+            type: string
+            format: uuid
+          organizationId:
+            type: string
+            format: uuid
+          createdDate:
+            type: string
+            format: date-time
     Error:
       type: object
       properties:
