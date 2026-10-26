@@ -1,0 +1,318 @@
+# lexoffice (lexoffice)
+
+<!-- API-EVANGELIST-PROVENANCE:BEGIN -->
+> ### About this repository
+>
+> **This is not our API.** This repository is an independent, third-party profile of a company's
+> **publicly available** API surface, maintained by [API Evangelist](https://apievangelist.com).
+> API Evangelist does not operate, host, resell, or support this company's APIs, and is not
+> affiliated with or endorsed by the company unless stated on the profile.
+>
+> **Where the information came from.** Everything here is assembled from material a member of the
+> public can reach with a browser and no credentials — the company's own website, developer portal
+> and documentation, the specifications it publishes for public use (OpenAPI, AsyncAPI, JSON Schema,
+> `apis.json`, `llms.txt` and similar), its public repositories, and its public status, pricing and
+> changelog pages. **Nothing here is obtained by breaching a system, defeating an access control, or
+> using credentials of any kind.**
+>
+> **The rating is an independent assessment.** The Kin Score and Agent Readiness rating are
+> independently calculated scores of a company's *public* API artifacts, produced by API Evangelist
+> against a published rubric. They are not certifications, endorsements, security assessments, or
+> audits, and they score published artifacts — not the quality, safety, or security of the software.
+>
+> **Corrections, re-scores, and removal are free.** No partnership, contract, or purchase is
+> required, and you do not need to justify the request.
+>
+> - **Something wrong?** Open an issue on this repository, or email
+>   [info@apievangelist.com](mailto:info@apievangelist.com).
+> - **Published something new?** Ask for a re-score and we will re-run the rating.
+> - **Want the listing taken down?** Say so and we will honor it. The profile is reduced to your
+>   company name, a factual description, and a link to your own site, and the company is recorded as
+>   **unrated** — never scored zero for having asked.
+>
+> **Response times.** Acknowledgement within **one business day**; removal or restriction within
+> **two business days**; corrections and re-scores within **five business days**.
+>
+> **Not from the company, and here with a question?** You are welcome here — we would rather be the
+> front line and point you the right way than have a good report go nowhere. What this repository
+> can answer is narrow, though, so it is worth knowing who you are actually looking for:
+>
+> - **A question about how the API works, an account, billing, or a bug in the service** — that is
+>   the company's own support, not us. We profile this API; we do not operate it and cannot see
+>   your account.
+> - **A bug in an open-source project we only catalog** — file it on that project's own repository.
+>   This has happened with a real and correct bug report that reached us instead of the people who
+>   could fix it, which helped nobody.
+> - **Anything about this listing itself** — the description, the tags, the rating, a missing or
+>   wrong artifact — is ours. Open an issue here.
+> - **Not sure, or something general about API Evangelist or APIs.io** — open an issue on the
+>   [APIs.io Inbox](https://github.com/api-search/inbox) and we will route it.
+>
+> **This repository contains no software, and we will never ask you to download anything.** There is
+> no build, release, installer, or binary here — only text and machine-readable API descriptions, so
+> there is nothing here that can be "corrupt" or need "repairing". Any issue, comment, or email
+> claiming otherwise and offering a download link is not from us and is hostile. Do not follow the
+> link; it is a lure. Report it to GitHub and, if you like, tell us at
+> [info@apievangelist.com](mailto:info@apievangelist.com) so we can take it down.
+>
+> **On a security or compliance team?** Email
+> [info@apievangelist.com](mailto:info@apievangelist.com) with *security* in the subject line and
+> you will get a person, not a form. We will tell you exactly which public URLs this profile was
+> built from so your team can see the same surface we did, and we will take the listing down on
+> request while you work through it.
+>
+> Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
+<!-- API-EVANGELIST-PROVENANCE:END -->
+
+lexoffice - rebranded to **lexware Office** in 2025 - is a German cloud accounting, invoicing, and bookkeeping SaaS from Lexware (Haufe Group). Its public REST API lets developers push and pull business data - contacts, invoices, quotations, order confirmations, delivery notes, credit notes, dunnings, bookkeeping vouchers, files, payments, and profile metadata - and subscribe to webhooks through event subscriptions.
+
+**Access model:** Self-serve. Any lexoffice / lexware Office customer on a paid plan can generate a private API key from the Public API add-on at [app.lexware.de/addons/public-api](https://app.lexware.de/addons/public-api) and start calling the API immediately - there is no partner application or OAuth client registration for the standard REST API. The key is a long-lived Bearer token, passed as `Authorization: Bearer YOUR_API_KEY`. The API is rate limited to **2 requests per second** per client (HTTP 429 on exceed).
+
+**Rebrand / domain note:** As part of the lexoffice → lexware Office rebrand, the API gateway moved from `https://api.lexoffice.io` to `https://api.lexware.io` on **26 May 2025**; the legacy host remained available through December 2025. The developer portal is now [developers.lexware.io](https://developers.lexware.io/docs/) (developers.lexoffice.io redirects there). This catalog entry keeps the slug/aid `lexoffice` for continuity while naming the rebrand honestly. Current base URL: `https://api.lexware.io/v1`.
+
+**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/lexoffice/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/lexoffice/refs/heads/main/apis.yml)
+
+## Tags
+
+- Accounting
+- Invoicing
+- Bookkeeping
+- Finance
+- Germany
+- Vouchers
+- Contacts
+- SaaS
+- Financial Software
+
+## Timestamps
+
+- **Created:** 2026-07-12
+- **Modified:** 2026-07-12
+
+## APIs
+
+### lexoffice Contacts API
+
+Create, retrieve, list, and update contacts - customers and vendors with company or person roles, addresses, contact persons, email/phone, and bank details. Contacts are referenced by invoices, vouchers, and other documents.
+
+- **Human URL:** [https://developers.lexware.io/docs/#contacts-endpoint](https://developers.lexware.io/docs/#contacts-endpoint)
+- **Base URL:** `https://api.lexware.io/v1`
+
+#### Tags
+
+- Contacts
+- Customers
+- Vendors
+
+#### Properties
+
+- [Documentation](https://developers.lexware.io/docs/)
+- [API Reference](https://developers.lexware.io/docs/#contacts-endpoint)
+- [OpenAPI](openapi/lexoffice-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/lexoffice.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/lexoffice.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+
+### lexoffice Invoices API
+
+Create and retrieve invoices with line items, tax conditions, shipping, and payment conditions. Invoices are drafts by default; pass `finalize=true` to create them in the open status. Fetch the rendered PDF via the document and file sub-resources.
+
+- **Human URL:** [https://developers.lexware.io/docs/#invoices-endpoint](https://developers.lexware.io/docs/#invoices-endpoint)
+- **Base URL:** `https://api.lexware.io/v1`
+
+#### Tags
+
+- Invoices
+- Billing
+- Documents
+
+#### Properties
+
+- [API Reference](https://developers.lexware.io/docs/#invoices-endpoint)
+- [OpenAPI](openapi/lexoffice-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/lexoffice.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/lexoffice.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+
+### lexoffice Quotations API
+
+Create and retrieve quotations (offers) with line items, expiration dates, and tax conditions, then fetch the rendered PDF document for a sales offer.
+
+- **Human URL:** [https://developers.lexware.io/docs/#quotations-endpoint](https://developers.lexware.io/docs/#quotations-endpoint)
+- **Base URL:** `https://api.lexware.io/v1`
+
+#### Tags
+
+- Quotations
+- Offers
+- Sales
+
+#### Properties
+
+- [API Reference](https://developers.lexware.io/docs/#quotations-endpoint)
+- [OpenAPI](openapi/lexoffice-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/lexoffice.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/lexoffice.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+
+### lexoffice Order Confirmations API
+
+Create and retrieve order confirmations that acknowledge a customer order, with line items and tax conditions, plus the rendered PDF document.
+
+- **Human URL:** [https://developers.lexware.io/docs/#order-confirmations-endpoint](https://developers.lexware.io/docs/#order-confirmations-endpoint)
+- **Base URL:** `https://api.lexware.io/v1`
+
+#### Tags
+
+- Order Confirmations
+- Sales
+
+#### Properties
+
+- [API Reference](https://developers.lexware.io/docs/#order-confirmations-endpoint)
+- [OpenAPI](openapi/lexoffice-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Open Collection](collections/lexoffice.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+
+### lexoffice Delivery Notes API
+
+Create and retrieve delivery notes documenting shipped goods, with line items (without prices) and delivery details, plus the rendered PDF document.
+
+- **Human URL:** [https://developers.lexware.io/docs/#delivery-notes-endpoint](https://developers.lexware.io/docs/#delivery-notes-endpoint)
+- **Base URL:** `https://api.lexware.io/v1`
+
+#### Tags
+
+- Delivery Notes
+- Fulfillment
+
+#### Properties
+
+- [API Reference](https://developers.lexware.io/docs/#delivery-notes-endpoint)
+- [OpenAPI](openapi/lexoffice-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Open Collection](collections/lexoffice.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+
+### lexoffice Credit Notes API
+
+Create and retrieve credit notes (Rechnungskorrektur) that credit a customer, with line items and tax conditions, plus the rendered PDF document.
+
+- **Human URL:** [https://developers.lexware.io/docs/#credit-notes-endpoint](https://developers.lexware.io/docs/#credit-notes-endpoint)
+- **Base URL:** `https://api.lexware.io/v1`
+
+#### Tags
+
+- Credit Notes
+- Refunds
+
+#### Properties
+
+- [API Reference](https://developers.lexware.io/docs/#credit-notes-endpoint)
+- [OpenAPI](openapi/lexoffice-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Open Collection](collections/lexoffice.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+
+### lexoffice Dunnings API
+
+Create and retrieve dunnings (payment reminders) that reference a preceding open invoice, with line items and dunning level, plus the rendered PDF document.
+
+- **Human URL:** [https://developers.lexware.io/docs/#dunnings-endpoint](https://developers.lexware.io/docs/#dunnings-endpoint)
+- **Base URL:** `https://api.lexware.io/v1`
+
+#### Tags
+
+- Dunnings
+- Reminders
+- Collections
+
+#### Properties
+
+- [API Reference](https://developers.lexware.io/docs/#dunnings-endpoint)
+- [OpenAPI](openapi/lexoffice-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Open Collection](collections/lexoffice.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+
+### lexoffice Vouchers API
+
+Manage bookkeeping vouchers (sales/purchase invoices and credit notes) - create, retrieve, update, delete, and search via the voucherlist - with voucher items, tax type, and posting categories. Upload and attach receipt files via the files endpoint.
+
+- **Human URL:** [https://developers.lexware.io/docs/#vouchers-endpoint](https://developers.lexware.io/docs/#vouchers-endpoint)
+- **Base URL:** `https://api.lexware.io/v1`
+
+#### Tags
+
+- Vouchers
+- Bookkeeping
+- Files
+
+#### Properties
+
+- [API Reference](https://developers.lexware.io/docs/#vouchers-endpoint)
+- [OpenAPI](openapi/lexoffice-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/lexoffice.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/lexoffice.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+
+### lexoffice Event Subscriptions API
+
+Subscribe to change events (e.g. `contact.created`, `invoice.created`) by registering an HTTPS callback URL. lexoffice POSTs a webhook payload to your callback when a subscribed event fires. Create, list, retrieve, and delete subscriptions. These are server-to-endpoint HTTP callbacks, not a WebSocket.
+
+- **Human URL:** [https://developers.lexware.io/docs/#event-subscriptions-endpoint](https://developers.lexware.io/docs/#event-subscriptions-endpoint)
+- **Base URL:** `https://api.lexware.io/v1`
+
+#### Tags
+
+- Webhooks
+- Event Subscriptions
+- Notifications
+
+#### Properties
+
+- [API Reference](https://developers.lexware.io/docs/#event-subscriptions-endpoint)
+- [OpenAPI](openapi/lexoffice-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Open Collection](collections/lexoffice.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+
+### lexoffice Payments API
+
+Retrieve the payment status and payment items recorded for a voucher, and list the payment conditions (terms and discounts) configured in the account.
+
+- **Human URL:** [https://developers.lexware.io/docs/#payments-endpoint](https://developers.lexware.io/docs/#payments-endpoint)
+- **Base URL:** `https://api.lexware.io/v1`
+
+#### Tags
+
+- Payments
+- Payment Conditions
+
+#### Properties
+
+- [API Reference](https://developers.lexware.io/docs/#payments-endpoint)
+- [OpenAPI](openapi/lexoffice-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Open Collection](collections/lexoffice.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+
+### lexoffice Profile and Metadata API
+
+Read account profile and connection metadata, the list of supported countries, posting categories used to classify vouchers, and recurring templates that generate recurring invoices.
+
+- **Human URL:** [https://developers.lexware.io/docs/#profile-endpoint](https://developers.lexware.io/docs/#profile-endpoint)
+- **Base URL:** `https://api.lexware.io/v1`
+
+#### Tags
+
+- Profile
+- Metadata
+- Recurring Templates
+
+#### Properties
+
+- [API Reference](https://developers.lexware.io/docs/#profile-endpoint)
+- [OpenAPI](openapi/lexoffice-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Open Collection](collections/lexoffice.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+
+## Common Properties
+
+- [Domain Security](security/lexoffice-domain-security.yml)
+- [Authentication](authentication/lexoffice-authentication.yml)
+- [LinkedIn](https://www.linkedin.com/company/lexware)
+- [Website](https://www.lexware.de/lexware-office/)
+- [Documentation](https://developers.lexware.io/docs/)
+- [Plans](plans/lexoffice-plans-pricing.yml)
+- [Rate Limits](rate-limits/lexoffice-rate-limits.yml)
+- [Fin Ops](finops/lexoffice-finops.yml)
+
+## Maintainers
+
+**FN:** Kin Lane
+**Email:** kin@apievangelist.com
